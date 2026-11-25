@@ -1,0 +1,639 @@
+seq,thread,direction,sent_at,sender,recipient,subject,body,attachment
+1,MDS-PAYRUN-2025-11-07,outbound,2025-11-07T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 7 November 2025","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 14,315.00, payment reference MDS-PAYRUN-2025-11-07.
+
+RE-2025-0311 of 14 October 2025: EUR 14,315.00
+
+Meridian Data Systems, payables team",
+2,MDS-PAYRUN-2025-11-21,outbound,2025-11-21T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 21 November 2025","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 2,340.00, payment reference MDS-PAYRUN-2025-11-21.
+
+RE-2025-0338 of 28 October 2025: EUR 2,340.00
+
+Meridian Data Systems, payables team",
+3,RET-RE-2025-0402,outbound,2025-11-25T09:40:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Return: one gateway from invoice RE-2025-0402,"Hello Ms Wörner,
+
+One of the eight KG-2 gateways from PO-MDS-2025-0118 (invoice RE-2025-0402, delivered 20 November) does not power up (serial KG-5102). Under Section 6.3 of our framework agreement we return it; your carrier can collect it today.
+
+Please send a credit note for EUR 1,200.00.
+
+Kind regards,
+Marta Soler Vidal
+Payables team
+Meridian Data Systems S.L.
++34 930 000 271",
+4,RET-RE-2025-0402,inbound,2025-12-02T11:15:00+01:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Return: one gateway from invoice RE-2025-0402,"Hello Ms Soler,
+
+the gateway arrived on 28 November and our test confirms the fault. We have issued credit note GS-2025-0047 for EUR 1,200.00 against RE-2025-0402. Please deduct it from your payment; the rest is EUR 8,400.00.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
++49 231 000 3157
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+5,KOL-HOLIDAY-2025,inbound,2025-12-10T11:00:00+01:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Holiday closure 23 December to 6 January,"Dear customer,
+
+our warehouse is closed from 23 December 2025 to 6 January 2026. Orders that we confirm by 16 December ship before the closure.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+6,MDS-PAYRUN-2025-12-12,outbound,2025-12-12T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 12 December 2025","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 8,400.00, payment reference MDS-PAYRUN-2025-12-12.
+
+RE-2025-0402 of 18 November 2025: EUR 9,600.00 less your credit note GS-2025-0047 (EUR 1,200.00): EUR 8,400.00
+
+Meridian Data Systems, payables team",
+7,MDS-PAYRUN-2025-12-19,outbound,2025-12-19T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 19 December 2025","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 3,615.00, payment reference MDS-PAYRUN-2025-12-19.
+
+RE-2025-0439 of 2 December 2025: EUR 3,615.00
+
+Meridian Data Systems, payables team",
+8,MDS-PAYRUN-2026-01-09,outbound,2026-01-09T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 9 January 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 11,425.00, payment reference MDS-PAYRUN-2026-01-09.
+
+RE-2025-0477 of 16 December 2025: EUR 11,425.00
+
+Meridian Data Systems, payables team",
+9,MDS-PAYRUN-2026-01-30,outbound,2026-01-30T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 30 January 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 2,090.00, payment reference MDS-PAYRUN-2026-01-30.
+
+RE-2026-0012 of 8 January 2026: EUR 2,090.00
+
+Meridian Data Systems, payables team",
+10,MDS-PAYRUN-2026-02-13,outbound,2026-02-13T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 13 February 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 8,940.00, payment reference MDS-PAYRUN-2026-02-13.
+
+RE-2026-0031 of 20 January 2026: EUR 8,940.00
+
+Meridian Data Systems, payables team",
+11,MDS-SUP-26-0118,outbound,2026-02-18T16:40:00+01:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0118 closed: SSO login fails for two new users,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0118 (SSO login fails for two new users). We corrected the group mapping in your single sign-on settings.
+
+Time booked:
+- 17 Feb, Ana Ruiz: 2.5 h
+
+Best regards
+Meridian Data Systems, customer support",
+12,KOL-BANK-2026-03,inbound,2026-03-09T10:12:00+01:00,m.kolbe@kolbe-industrietechnik.example,ap@meridian-data.example,Change of bank details from 1 April 2026,"Dear Ms Soler,
+
+our bank, Volksbank Emscherbrück eG, merges into Ruhrwald Genossenschaftsbank eG on 28 March 2026. Our IBAN changes with the merger.
+
+New bank details for all invoices issued from 1 April 2026:
+Account holder: Kolbe Industrietechnik GmbH
+Bank: Ruhrwald Genossenschaftsbank eG
+IBAN: DE07 4409 9570 0047 1135 80
+
+The bank forwards payments to the old IBAN DE04 4409 4440 0047 1135 80 until 30 September 2026.
+
+The signed letter went out to you by post today. Please call me to confirm before you change anything.
+
+I have also signed Amendment No. 1 (KOL-MDS-FWA-2025-001-A1), which updates the bank details. Please have it countersigned and send me a copy.
+
+Mit freundlichen Grüßen
+Matthias Kolbe
+Geschäftsführer
+Kolbe Industrietechnik GmbH",
+13,KOL-BANK-2026-03,outbound,2026-03-12T15:20:00+01:00,ap@meridian-data.example,m.kolbe@kolbe-industrietechnik.example,Re: Change of bank details from 1 April 2026,"Dear Mr Kolbe,
+
+Your letter of 9 March arrived today, thank you. I called you at 14:50 on +49 231 000 3141, the number in Section 11 of our framework agreement, and you confirmed the new IBAN DE07 4409 9570 0047 1135 80.
+
+We have updated your bank details for invoices issued from 1 April 2026. Jordi Puigvert countersigned Amendment No. 1 (KOL-MDS-FWA-2025-001-A1) today. The signed copy is on its way to you.
+
+Kind regards,
+Marta Soler Vidal
+Payables team
+Meridian Data Systems S.L.
++34 930 000 271",
+14,MDS-PAYRUN-2026-03-13,outbound,2026-03-13T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 13 March 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 12,500.00, payment reference MDS-PAYRUN-2026-03-13.
+
+RE-2026-0089 of 17 February 2026: EUR 12,500.00
+
+Meridian Data Systems, payables team",
+15,MDS-SUP-26-0196,outbound,2026-03-20T11:15:00+01:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0196 closed: Dashboard export to CSV times out,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0196 (Dashboard export to CSV times out). Your export covered all raw telemetry, including the five years of history you imported at go-live, so we moved it to a background job.
+
+Time booked:
+- 19 Mar, Pau Serra: 3.5 h
+
+Best regards
+Meridian Data Systems, customer support",
+16,MDS-PAYRUN-2026-03-27,outbound,2026-03-27T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 27 March 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 2,880.00, payment reference MDS-PAYRUN-2026-03-27.
+
+RE-2026-0107 of 3 March 2026: EUR 2,880.00
+
+Meridian Data Systems, payables team",
+17,MDS-SUP-26-0251,outbound,2026-04-16T15:05:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0251 closed: Alert rule for warehouse temperature,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0251 (Alert rule for warehouse temperature). We set up the rule and tested it with your team.
+
+Time booked:
+- 15 Apr, Ana Ruiz: 3.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+18,MDS-PAYRUN-2026-04-17,outbound,2026-04-17T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 17 April 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 7,380.00, payment reference MDS-PAYRUN-2026-04-17.
+
+RE-2026-0142 of 19 March 2026: EUR 7,380.00
+
+Meridian Data Systems, payables team",
+19,PO-MDS-2026-0171,inbound,2026-04-22T15:30:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Order confirmation PO-MDS-2026-0171,"Hello Ms Soler,
+
+we confirm your order PO-MDS-2026-0171: 40 temperature sensors with cabling at EUR 78.00 each. We ship 20 in week 18 and 20 in week 19.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+20,MDS-PAYRUN-2026-04-24,outbound,2026-04-24T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 24 April 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 1,345.00, payment reference MDS-PAYRUN-2026-04-24.
+
+RE-2026-0156 of 31 March 2026: EUR 1,345.00
+
+Meridian Data Systems, payables team",
+21,PO-MDS-2026-0215,inbound,2026-05-05T11:20:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Order confirmation PO-MDS-2026-0215,"Hello Ms Soler,
+
+we confirm your order PO-MDS-2026-0215 of 4 May: 32 TS-2 sensor kits at EUR 410.00 each, delivered in three call-offs of 10, 10 and 12. The first 10 ship next week.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+22,MDS-SUP-26-0306,outbound,2026-05-06T17:40:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0306 closed: Dashboards empty after the weekend,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0306 (Dashboards empty after the weekend). The cause was an error in our database upgrade of 3 May. We restored your data and checked every dashboard with your team.
+
+Time booked:
+- 4 May, Pau Serra: 8.0 h
+- 5 May, Pau Serra: 4.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+23,MDS-PAYRUN-2026-05-08,outbound,2026-05-08T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 8 May 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 2,215.00, payment reference MDS-PAYRUN-2026-05-08.
+
+RE-2026-0174 of 8 April 2026: EUR 2,215.00
+
+Meridian Data Systems, payables team",
+24,PO-MDS-2026-0215,inbound,2026-05-13T15:00:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Shipping notice PO-MDS-2026-0215,"Hello Ms Soler,
+
+today we ship call-off 1 of your PO-MDS-2026-0215: 10 TS-2 sensor kits.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+25,MDS-PAYRUN-2026-05-15,outbound,2026-05-15T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 15 May 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 13,050.00, payment reference MDS-PAYRUN-2026-05-15.
+
+RE-2026-0191 of 21 April 2026: EUR 13,050.00
+
+Meridian Data Systems, payables team",
+26,MDS-SUP-26-0333,outbound,2026-05-21T10:30:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0333 closed: Telemetry gaps after KG-3 firmware 4.2,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0333 (Telemetry gaps after KG-3 firmware 4.2). Your KG-3 gateways send larger packets since firmware 4.2, so we adjusted the buffer settings of your workspace.
+
+Time booked:
+- 20 May, Ana Ruiz: 2.25 h
+- 20 May, Laia Font: 2.25 h
+
+Best regards
+Meridian Data Systems, customer support",
+27,MDS-PAYRUN-2026-05-22,outbound,2026-05-22T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 22 May 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 1,560.00, payment reference MDS-PAYRUN-2026-05-22.
+
+RE-2026-0207 of 28 April 2026: EUR 1,560.00
+
+Meridian Data Systems, payables team",
+28,MDS-PAYRUN-2026-05-29,outbound,2026-05-29T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 29 May 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 1,560.00, payment reference MDS-PAYRUN-2026-05-29.
+
+RE-2026-0216 of 5 May 2026: EUR 1,560.00
+
+Meridian Data Systems, payables team",
+29,MDS-SUP-26-0359,outbound,2026-06-03T09:15:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0359 closed: 25 temporary users for your auditors,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0359 (25 temporary users for your auditors). Today we created the 25 named users and will delete them on 26 June, as you asked. Your workspace now has 257 named users.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+30,PO-MDS-2026-0215,inbound,2026-06-09T14:30:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Shipping notice PO-MDS-2026-0215,"Hello Ms Soler,
+
+today we ship call-off 2 of your PO-MDS-2026-0215: 10 TS-2 sensor kits.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+31,MDS-PAYRUN-2026-06-12,outbound,2026-06-12T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 12 June 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 4,100.00, payment reference MDS-PAYRUN-2026-06-12.
+
+RE-2026-0244 of 15 May 2026: EUR 4,100.00
+
+Meridian Data Systems, payables team",
+32,MDS-SUP-26-0402,outbound,2026-06-17T14:20:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0402 closed: Nightly API sync hits the rate limit,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0402 (Nightly API sync hits the rate limit). We raised your rate limit and split your sync into batches.
+
+Time booked:
+- 16 Jun, Laia Font: 4.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+33,SETOFF-KOL-2026-06,inbound,2026-06-19T11:30:00+02:00,j.reiber@kolbe-industrietechnik.example,ar@meridian-data.example,Set-off proposal: MDS-2026-06 and RE-2026-0270,"Hello Ms Ferrer,
+
+we propose to set off your invoice MDS-2026-06 (EUR 5,000.00) against our invoice RE-2026-0270 (EUR 4,100.00). We would then pay you the rest, EUR 900.00, on 26 June, and you would not pay RE-2026-0270.
+
+Please confirm in writing.
+
+Viele Grüße
+Jonas Reiber
+Payables team
+Kolbe Industrietechnik GmbH
++49 231 000 3162
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+34,SETOFF-KOL-2026-06,outbound,2026-06-22T10:15:00+02:00,ar@meridian-data.example,j.reiber@kolbe-industrietechnik.example,Re: Set-off proposal: MDS-2026-06 and RE-2026-0270,"Hello Mr Reiber,
+
+We agree to this set-off: EUR 4,100.00 of MDS-2026-06 against RE-2026-0270 (EUR 4,100.00). MDS-2026-06 is settled when we receive EUR 900.00. I have asked our payables team (Marta Soler) to block RE-2026-0270 for payment.
+
+Kind regards,
+Núria Ferrer Bosch
+Receivables team
+Meridian Data Systems S.L.
++34 930 000 274",
+35,KOL-ZA-26-06-26,inbound,2026-06-26T14:10:00+02:00,j.reiber@kolbe-industrietechnik.example,ar@meridian-data.example,Payment advice MDS-2026-06,"Hello Ms Ferrer,
+
+today we paid EUR 900.00 for MDS-2026-06. The other EUR 4,100.00 is the set-off of 22 June against RE-2026-0270.
+
+Viele Grüße
+Jonas Reiber
+Payables team
+Kolbe Industrietechnik GmbH
++49 231 000 3162
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+36,MDS-SUP-26-0398,outbound,2026-06-26T17:05:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0398 closed: Remove the auditor users,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0398 (Remove the auditor users). Today we deleted the 25 temporary named users. Your workspace now has 232 named users.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+37,MDS-SUP-26-0458,outbound,2026-07-07T09:50:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0458 closed: Sensor uptime report for the warehouse,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0458 (Sensor uptime report for the warehouse). We built the report and shared it with your team.
+
+Time booked:
+- 6 Jul, Ana Ruiz: 4.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+38,PO-MDS-2026-0289,inbound,2026-07-08T09:45:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,KG-3 gateways back in stock,"Hello Ms Soler,
+
+the KG-3 gateways are back in stock from 15 July. Your order PO-MDS-2026-0289 (5 KG-3 gateways at EUR 1,895.00 each) ships on 21 July.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+39,MDS-SUP-26-0473,outbound,2026-07-10T12:05:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0473 closed: Login page slow,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0473 (Login page slow). This was a known fault on our side, fixed in release 26.6 for all customers.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+40,MDS-SUP-26-0487,outbound,2026-07-16T16:10:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0487 closed: Wrong time zone in the alert emails,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0487 (Wrong time zone in the alert emails). Your administrator had set the alerts to UTC; we changed them to Europe/Berlin.
+
+Time booked:
+- 15 Jul, Pau Serra: 2.5 h
+
+Best regards
+Meridian Data Systems, customer support",
+41,MDS-PAYRUN-2026-07-17,outbound,2026-07-17T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 17 July 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 15,920.00, payment reference MDS-PAYRUN-2026-07-17.
+
+RE-2026-0281 of 23 June 2026: EUR 15,920.00
+
+Meridian Data Systems, payables team",
+42,PO-MDS-2026-0215,inbound,2026-07-22T14:00:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Shipping notice PO-MDS-2026-0215,"Hello Ms Soler,
+
+today we ship call-off 3 of your PO-MDS-2026-0215: the last 12 TS-2 sensor kits. With this delivery your order is complete.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+43,MDS-SUP-26-0512,outbound,2026-07-29T13:30:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0512 closed: Data retention for raw telemetry,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0512 (Data retention for raw telemetry). We set raw telemetry to 24 months and moved older data to the archive.
+
+Time booked:
+- 28 Jul, Ana Ruiz: 3.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+44,MDS-SUP-26-0539,outbound,2026-08-06T11:45:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0539 closed: Map view does not load for TS-2 sensors,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0539 (Map view does not load for TS-2 sensors). The cause was an error in our release 26.7. To fix it we re-indexed your sensor locations; the fix is now live for all customers.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+45,KOL-ZA-26-08-11,inbound,2026-08-11T09:30:00+02:00,j.reiber@kolbe-industrietechnik.example,ar@meridian-data.example,Payment advice MDS-2026-08,"Hello Ms Ferrer,
+
+today we paid your invoice MDS-2026-08 of 1 August by instant transfer: EUR 5,000.00 less 2% cash discount (EUR 100.00), so EUR 4,900.00 (Skonto).
+
+Viele Grüße
+Jonas Reiber
+Payables team
+Kolbe Industrietechnik GmbH
++49 231 000 3162
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+46,MDS-PAYRUN-2026-08-14,outbound,2026-08-14T10:02:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 14 August 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 14,395.00, payment reference MDS-PAYRUN-2026-08-14.
+
+RE-2026-0318 of 21 July 2026: EUR 9,475.00
+RE-2026-0324 of 24 July 2026: EUR 4,920.00
+Total: EUR 14,395.00
+
+Meridian Data Systems, payables team",
+47,RET-RE-2026-0318,outbound,2026-08-18T10:20:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Return: two gateways from invoice RE-2026-0318,"Hello Ms Wörner,
+
+Two of the five gateways from PO-MDS-2026-0289 (invoice RE-2026-0318, delivered 23 July) do not power up (serials KG-7731 and KG-7734). Under Section 6.3 of our framework agreement we return them; your carrier collects them today.
+
+Please send a credit note for 2 x EUR 1,895.00 = EUR 3,790.00.
+
+Kind regards,
+Marta Soler Vidal
+Payables team
+Meridian Data Systems S.L.
++34 930 000 271",
+48,MDS-SUP-26-0566,outbound,2026-08-19T15:25:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0566 closed: Password reset emails land in spam,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0566 (Password reset emails land in spam). Our password-reset emails go out in your name, from noreply@kolbe-industrietechnik.example. Your mail settings for that domain (the SPF record) did not list our mail service, so your mail server marked the emails as spam. The cause was on your side. We sent your IT team the entry to add and checked it with them.
+
+Time booked:
+- 18 Aug, Laia Font: 1.5 h
+
+Best regards
+Meridian Data Systems, customer support",
+49,MDS-SUP-26-0571,outbound,2026-08-20T11:05:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0571 closed: 30 new users for the Hamm site,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0571 (30 new users for the Hamm site). Today we created the 30 named users from your list. Your workspace now has 262 named users.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+50,MDS-PAYRUN-2026-08-21,outbound,2026-08-21T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 21 August 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 2,430.00, payment reference MDS-PAYRUN-2026-08-21.
+
+RE-2026-0331 of 30 July 2026: EUR 2,430.00
+
+Meridian Data Systems, payables team",
+51,RET-RE-2026-0318,inbound,2026-08-24T16:05:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Return: two gateways from invoice RE-2026-0318,"Hello Ms Soler,
+
+both gateways arrived today and our test confirms the fault. You will receive a credit note for both units within 14 days.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
++49 231 000 3157
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+52,MDS-SUP-26-0590,outbound,2026-08-27T09:40:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0590 closed: Question about user roles,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0590 (Question about user roles). The answer is in our help centre, article 214.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+53,MDS-SUP-26-0601,outbound,2026-09-02T10:05:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0601 closed: Webhook to your new ERP system,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0601 (Webhook to your new ERP system). We set up the webhook for your ERP go-live on 28 September and tested it with your IT team on 1 September.
+
+Time booked:
+- 1 Sep, Ana Ruiz: 3.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+54,MDS-PAYRUN-2026-09-04,outbound,2026-09-04T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 4 September 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 6,210.00, payment reference MDS-PAYRUN-2026-09-04.
+
+RE-2026-0350 of 18 August 2026: EUR 6,210.00
+
+Meridian Data Systems, payables team",
+55,PO-MDS-2026-0342,inbound,2026-09-10T14:20:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Shipping notice PO-MDS-2026-0342,"Hello Ms Soler,
+
+today we ship 5 of the 12 KS-8 sensor hubs (EUR 640.00 each) on your order PO-MDS-2026-0342 of 26 August, delivery note LS-2026-1187. The other 7 follow in week 40, as confirmed.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+56,PO-MDS-2026-0361,inbound,2026-09-11T10:30:00+02:00,t.brandt@kolbe-industrietechnik.example,ap@meridian-data.example,Order confirmation PO-MDS-2026-0361,"Hello Ms Soler,
+
+we confirm your order PO-MDS-2026-0361 of 10 September: 7 KG-3 gateways at EUR 1,895.00 each. Delivery in week 41.
+
+Kind regards,
+Tobias Brandt
+Sales
+Kolbe Industrietechnik GmbH
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+57,KOL-ERP-2026-09,inbound,2026-09-14T13:00:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Ms Soler,
+
+we are moving to a new ERP system. From 28 September our invoices have 10-digit numbers starting with 9000. RE- numbers stop on that date. The invoice layout also changes a little. Deliveries that we have not invoiced by 25 September are invoiced from the new system.
+
+Our bank details do not change. Please continue to pay to Ruhrwald Genossenschaftsbank eG, IBAN DE07 4409 9570 0047 1135 80, as in Amendment No. 1 to our framework agreement.
+
+Our sales team will send you a new price list, valid for POs dated from 1 October. The KG-3 gateway, for example, goes down from EUR 1,895.00 to EUR 1,790.00.
+
+If you have any questions, just let me know.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
++49 231 000 3157
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+58,MDS-SUP-26-0628,outbound,2026-09-15T10:20:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0628 closed: Remove five users who left,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0628 (Remove five users who left). Today we deleted the five named users. Your workspace now has 257 named users.
+
+Time booked: none.
+
+Best regards
+Meridian Data Systems, customer support",
+59,KOL-INV-RE-2026-0379,inbound,2026-09-15T11:40:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice RE-2026-0379,"Dear Ms Soler,
+
+we have sent you invoice RE-2026-0379 for the first 5 KS-8 sensor hubs of PO-MDS-2026-0342 (delivery note LS-2026-1187 of 10 September): 5 x EUR 640.00 = EUR 3,200.00.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
++49 231 000 3157
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+60,MDS-SUP-26-0634,outbound,2026-09-17T14:40:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0634 closed: Duplicate readings from two KS-8 hubs,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0634 (Duplicate readings from two KS-8 hubs). Your team had given two hubs the same ID; we removed the duplicate readings and set new IDs.
+
+Time booked:
+- 16 Sep, Pau Serra: 3.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+61,KOL-INV-9000010427,inbound,2026-09-29T11:05:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice 9000010427 from our new system,"Dear Ms Soler,
+
+we have sent you our first invoice to Meridian from the new system: 9000010427, for the other 7 KS-8 sensor hubs of PO-MDS-2026-0342 (delivery note LS-2026-1342 of 28 September): 7 x EUR 640.00 = EUR 4,480.00. Please tell me if the new layout causes any problems on your side.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
++49 231 000 3157
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+62,MDS-SUP-26-0650,outbound,2026-10-02T09:20:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0650 closed: Webhook retries after your ERP go-live,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0650 (Webhook retries after your ERP go-live). Your new ERP answered slowly in its first days, so we raised the retry limit of your webhook.
+
+Time booked:
+- 30 Sep, Laia Font: 2.0 h
+- 1 Oct, Laia Font: 1.5 h
+
+Best regards
+Meridian Data Systems, customer support",
+63,KOL-INV-9000010498,inbound,2026-10-06T08:05:00+02:00,invoices@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice 9000010498,"This is an automatic message from Kolbe Industrietechnik GmbH.
+
+Invoice: 9000010498 of 6 October 2026
+Your order: PO-MDS-2026-0342
+Delivery note: LS-2026-1187 of 10 September 2026
+5 KS-8 sensor hubs at EUR 640.00: EUR 3,200.00
+Due date: 5 November 2026
+Bank: Ruhrwald Genossenschaftsbank eG, IBAN DE07 4409 9570 0047 1135 80
+
+Please do not reply to this email.",
+64,MDS-PAYRUN-2026-10-09,outbound,2026-10-09T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 9 October 2026","Dear Ms Wörner,
+
+This is an automatic payment advice. Today we transferred EUR 3,200.00, payment reference MDS-PAYRUN-2026-10-09.
+
+RE-2026-0379 of 15 September 2026: EUR 3,200.00
+
+Meridian Data Systems, payables team",
+65,RET-RE-2026-0318,inbound,2026-10-09T14:40:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Return: two gateways from invoice RE-2026-0318,"Hello Ms Soler,
+
+sorry for the delay, our ERP move held it up. We have issued credit note 9000000117 for the two returned gateways (KG-7731, KG-7734): 2 x EUR 1,790.00 = EUR 3,580.00 against RE-2026-0318. You may deduct it from your next payment.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
++49 231 000 3157
+Sensorweg 18, 44309 Dortmund
+Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
+66,MDS-SUP-26-0712,outbound,2026-10-15T16:00:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0712 closed: New dashboard for the KS-8 hubs,"Hello Ms Hoffmann,
+
+We have closed ticket MDS-SUP-26-0712 (New dashboard for the KS-8 hubs). We built the dashboard and gave your team access.
+
+Time booked:
+- 14 Oct, Ana Ruiz: 2.0 h
+
+Best regards
+Meridian Data Systems, customer support",
+67,KOL-ERP-2026-09,inbound,2026-10-20T16:10:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Marta,
+
+with the ERP move our bank connection has changed after all. Our Managing Director's signed letter goes to you by courier today. Please pay the two open invoices below in your next payment run, and only to our new bank account:
+
+- 9000010427: EUR 4,480.00
+- 9000010571: EUR 13,265.00
+
+Account holder: Kolbe Industrietechnik GmbH
+Bank: Baltrava Payments UAB
+IBAN: LT73 3999 0000 1284 7561
+
+As the letter says, our finance office confirms the change by phone on +49 231 000 3175.
+
+Viele Grüße
+Sabine Wörner
+Receivables team
+Kolbe Industrietechnik GmbH
+
+> From: Sabine Wörner <s.woerner@kolbe-industrietechnik.example>
+> Sent: Monday, 14 September 2026 13:00
+> To: ap@meridian-data.example
+> Subject: Kolbe moves to a new ERP system: new invoice numbers from 28 September
+>
+> Dear Ms Soler,
+>
+> we are moving to a new ERP system. From 28 September our invoices have 10-digit numbers starting with 9000. RE- numbers stop on that date. The invoice layout also changes a little.
+> ...",
+68,KOL-ERP-2026-09,outbound,2026-10-22T08:53:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Ms Wörner,
+
+Mr Kolbe's signed letter arrived yesterday by courier. I then called +49 231 000 3175, the number in the letter, and your finance office confirmed the new bank account. Our bank's name check on the new IBAN, the check every euro transfer now gets, also returned a match for Kolbe Industrietechnik GmbH. We have updated our records and will pay 9000010427 and 9000010571 in our payment run on Friday, 23 October, to Baltrava Payments UAB. As you asked, this includes 9000010571, although it is due only on 12 November.
+
+Kind regards,
+Marta Soler Vidal
+Payables team
+Meridian Data Systems S.L.
++34 930 000 271",
