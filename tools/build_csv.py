@@ -128,7 +128,7 @@ ROUTINE = [
     ("RE-2026-0331", "2026-07-30", "2430.00"),
     ("RE-2026-0379", "2026-09-15", "3200.00"),
 ]
-# A1 Section 7.1: the new bank account applies to invoices issued from 1 April 2026
+# Kolbe's letter of 9 March 2026 (mail 12): the new bank account applies to invoices issued from 1 April 2026
 inbound += [(n, issue, amt, "0.00", IBAN_KOLBE_OLD if issue < "2026-04-01" else IBAN_KOLBE_NEW) for n, issue, amt in ROUTINE]
 for n, issue, amt, tax, ib in inbound:
     inv.append(
@@ -242,7 +242,6 @@ tx.sort(key=lambda r: (r["occurred_at"], r["direction"], r["invoice_number"], KO
 contracts = [
     ("KOL-MDS-FWA-2025-001", "2025-09-22", ""),
     ("MDS-KOL-SUB-2025-001", "2025-09-24", ""),
-    ("KOL-MDS-FWA-2025-001-A1", "2026-03-09", "KOL-MDS-FWA-2025-001"),
 ]
 
 # ---------- write ----------

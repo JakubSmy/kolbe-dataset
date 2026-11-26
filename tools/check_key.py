@@ -126,7 +126,7 @@ def log(thread):
 
 
 SUB = docs["MDS-KOL-SUB-2025-001"]
-A1 = docs["KOL-MDS-FWA-2025-001-A1"]
+FWA = docs["KOL-MDS-FWA-2025-001"]
 last = mail[str(len(mail))]
 DERIVED = {
     "p1 at risk 17,745.00 = 4,480.00 + 13,265.00; payable now 17,745.00 - 3,580.00 = 14,165.00": A("9000010427") + A("9000010571")
@@ -140,21 +140,28 @@ DERIVED = {
     == 1
     and "+49 231 000 3175" in last["body"]
     and last["sender"] == "ap@meridian-data.example"
-    and "+49 231 000 3141** (the number for call-backs" in A1
-    and "never to a number given in the change request" in A1
-    and "3175" not in A1
-    and "A payment to any other bank account does not." in A1
+    and "+49 231 000 3141 (the number for call-backs under Section 7.2)" in FWA
+    and "the Buyer confirms it by a phone call to the Managing Director's number in Section 11, not to a number given in the notice" in FWA
+    and "3175" not in FWA
+    and "Only a payment to the bank account last validly notified (at the start, the one in Section 7.1) discharges the Buyer's debt."
+    in FWA
     and "name check" in last["body"],
     "p1/p2 4,480.00 - 3,580.00 = 900.00": A("9000010427") - TX("RE-2026-0318-C1") == D("900.00"),
+    "p2 FWA 6.3 credit at the PO price within 14 days; Kolbe's credit note mail allows the deduction; FWA 8.1/8.3 set-off only with written agreement": "credits returned Goods at the PO price within 14 days"
+    in FWA
+    and "Section 8 does not apply" not in FWA
+    and "You may deduct it from your next payment." in body("RET-RE-2026-0318")
+    and "8.3 Section 8.1 and Section 8.2 also apply to any set-off within this agreement." in FWA
+    and "Email is enough." in FWA,
     "p2 2026-09-07 = 2026-08-24 + 14 days, 32 days late": (dt.date(2026, 8, 24) + dt.timedelta(days=14)).isoformat() == "2026-09-07"
     and (DD(tx["RE-2026-0318-C1"]["occurred_at"]) - dt.date(2026, 9, 7)).days == 32,
     "p2 RE-2026-0318 = 5 x 1,895.00, credit 3,580.00 = 2 x 1,790.00, short 210.00": A("RE-2026-0318") == 5 * D("1895.00")
     and TX("RE-2026-0318-C1") == 2 * D("1790.00")
     and 2 * D("1895.00") - TX("RE-2026-0318-C1") == D("210.00"),
-    "p3 SUB 2.2: 250 users, EUR 25.00 per extra user a month, counted on the 1st; 262 on 1 Sep, 257 on 1 Oct; 12 x 25 + 7 x 25 = 475.00": "covers up to **250 named users**"
+    "p3 SUB 2.2: 250 users, EUR 25.00 per extra user a month, counted on the 1st; 262 on 1 Sep, 257 on 1 Oct; 12 x 25 + 7 x 25 = 475.00": "covers up to 250 named users"
     in SUB
-    and "Users above the limit that are not on that invoice are billed on a separate invoice." in SUB
-    and "**EUR 25.00 per month**" in SUB
+    and "Users above the limit are billed monthly." in SUB
+    and "costs EUR 25.00 per month" in SUB
     and "counts the named users on the first day of each month" in SUB
     and "now has 262 named users" in body("MDS-SUP-26-0571")
     and body_m("MDS-SUP-26-0571")["sent_at"].startswith("2026-08-20")
@@ -162,24 +169,21 @@ DERIVED = {
     and body_m("MDS-SUP-26-0628")["sent_at"].startswith("2026-09-15")
     and (262 - 250) * D("25") + (257 - 250) * D("25") == D("475")
     and A("MDS-2026-09") == A("MDS-2026-10") == D("5000.00"),
-    "support hours: Q1 2.5 + 3.5 = 6; Q3 0458 4 + 0487 2.5 + 0512 3 + 0566 1.5 + 0601 3 + 0634 3 + 0650 3 (30 Sep) = 20 h, exactly the 20 included; whole 0650 in Q3 = 21.5 h, 1.5 x 120.00 = 180.00 would be wrong; 0539 books no time": "**20 hours**"
+    "support hours: Q1 2.5 + 3.5 = 6; Q3 0458 4 + 0487 2.5 + 0512 3 + 0566 1.5 + 0601 3 + 0634 3 = 17 h by work date and by closing date; 0650 books 4.5 h on 1 Oct (Q4); 0539 books no time": "The fee includes 20 hours of expert support per calendar quarter."
     in SUB
-    and "**EUR 120.00 per hour**" in SUB
-    and "The time of every engineer counts." in SUB
-    and "Time counts in the quarter in which the work is done" in SUB
-    and "Time spent on a fault of the Platform itself does not count" in SUB
+    and "Time spent on faults of the Platform is not counted." in SUB
+    and "Further hours cost EUR 120.00 per hour." in SUB
     and log("MDS-SUP-26-0458") == [("6 Jul", 4.0)]
     and log("MDS-SUP-26-0487") == [("15 Jul", 2.5)]
     and log("MDS-SUP-26-0512") == [("28 Jul", 3.0)]
     and log("MDS-SUP-26-0566") == [("18 Aug", 1.5)]
     and log("MDS-SUP-26-0601") == [("1 Sep", 3.0)]
     and log("MDS-SUP-26-0634") == [("16 Sep", 3.0)]
-    and log("MDS-SUP-26-0650") == [("30 Sep", 3.0), ("1 Oct", 1.5)]
+    and log("MDS-SUP-26-0650") == [("1 Oct", 4.5)]
+    and body_m("MDS-SUP-26-0650")["sent_at"].startswith("2026-10-02")
+    and all(body_m(f"MDS-SUP-26-{t}")["sent_at"][:10] <= "2026-09-30" for t in ("0458", "0487", "0512", "0566", "0601", "0634"))
     and log("MDS-SUP-26-0539") == []
-    and "up to **20 hours**" in SUB
-    and "Hours above 20 in a quarter cost" in SUB
-    and 4 + 2.5 + 3 + 1.5 + 3 + 3 + 3 == 20
-    and (21.5 - 20) * 120 == 180,
+    and 4 + 2.5 + 3 + 1.5 + 3 + 3 == 17,
     "p4 9000010498 = RE-2026-0379 = 5 x 640.00, same delivery note LS-2026-1187; PO-0342 is 12 hubs = 5 + 7; RE-2026-0379 paid 2026-10-09; 9000010498 unpaid, due 2026-11-05": A(
         "9000010498"
     )
@@ -192,14 +196,27 @@ DERIVED = {
     and tx["RE-2026-0379-P1"]["occurred_at"] == "2026-10-09"
     and inv["9000010498"]["due_date"] == "2026-11-05"
     and not any(t["invoice_number"] == "9000010498" for t in tx.values())
-    and "5.1 The Supplier issues one invoice per delivery" in A1
-    and "before the due date" in A1,
+    and "5.1 The Supplier issues one invoice per delivery" in FWA
+    and "before the due date" in FWA,
+    "s1 bank change by notice under FWA 7.2: MD's letter of 9 March (new IBAN for invoices from 1 April, old IBAN forwarded until 30 September 2026) and Meridian's call to 3141; no amendment exists; March invoices on DE04 paid 2026-04-17 and 2026-04-24": "7.2 The Supplier may change its bank details by notice to the Buyer."
+    in FWA
+    and "New bank details for all invoices issued from 1 April 2026" in body("KOL-BANK-2026-03")
+    and "The bank forwards payments to the old IBAN DE04 4409 4440 0047 1135 80 until 30 September 2026." in body("KOL-BANK-2026-03")
+    and "I called you at 14:50 on +49 231 000 3141" in body("KOL-BANK-2026-03")
+    and body_m("KOL-BANK-2026-03")["sender"] == "m.kolbe@kolbe-industrietechnik.example"
+    and sorted(docs) == ["KOL-MDS-FWA-2025-001", "MDS-KOL-SUB-2025-001"]
+    and not any("Amendment" in m["body"] for m in mail.values())
+    and inv["RE-2026-0142"]["issue_date"] < "2026-04-01"
+    and inv["RE-2026-0156"]["issue_date"] < "2026-04-01"
+    and inv["RE-2026-0142"]["iban"] == inv["RE-2026-0156"]["iban"] == "DE04440944400047113580"
+    and tx["RE-2026-0142-P1"]["occurred_at"] == "2026-04-17"
+    and tx["RE-2026-0156-P1"]["occurred_at"] == "2026-04-24",
     "s8 MDS-2026-04 due Friday 2026-05-01 (Labour Day), paid Monday 2026-05-04; SUB 4.2 next business day": inv["MDS-2026-04"]["due_date"]
     == "2026-05-01"
     and tx["MDS-2026-04-P1"]["occurred_at"] == "2026-05-04"
     and dt.date(2026, 5, 1).weekday() == 4
     and dt.date(2026, 5, 4).weekday() == 0
-    and "a Sunday or a public holiday in Barcelona, a payment received on the next business day is on time" in SUB,
+    and "If a due date is not a business day in Barcelona, payment on the next business day is on time." in SUB,
     "s3 25 temporary users 3 to 26 June: 257 between the counts, 232 on 1 June and 1 July; 7 x 25 = 175.00 would be wrong": "now has 257 named users"
     in body("MDS-SUP-26-0359")
     and body_m("MDS-SUP-26-0359")["sent_at"].startswith("2026-06-03")
@@ -214,18 +231,20 @@ DERIVED = {
     and log("MDS-SUP-26-0402") == [("16 Jun", 4.0)]
     and "The cause was an error in our database upgrade" in body("MDS-SUP-26-0306")
     and (23.5 - 20) * 120 == 420,
-    "s5 MDS-2026-08: 4,900.00 + 100.00 deduction on 2026-08-11 = issue + 10 days; SUB 4.7 allows 2%": TX("MDS-2026-08-P1") == D("4900.00")
+    "s5 MDS-2026-08: 4,900.00 + 100.00 deduction on 2026-08-11 = issue + 10 days; SUB 4.5 allows 2%": TX("MDS-2026-08-P1") == D("4900.00")
     and TX("MDS-2026-08-D1") == D("100.00")
     and tx["MDS-2026-08-D1"]["kind"] == "deduction"
     and tx["MDS-2026-08-P1"]["occurred_at"] == "2026-08-11" == day(inv["MDS-2026-08"]["issue_date"], 10)
-    and "deduct **2%** of an invoice only if the remaining amount is received" in SUB
-    and "10th calendar day after the issue date" in SUB,
+    and "4.5 The Customer may deduct a 2% cash discount if payment is received within 10 days of the invoice date." in SUB
+    and "Section 4.5 or a set-off" in SUB
+    and "4.4 Amounts not paid by the due date" in SUB
+    and "EUR 40.00" in SUB,
     "no invoice carries VAT": all(T(n) == 0 for n in inv),
     "s2 9000010571 = 7 x 1,895.00 = 13,265.00, PO of 10 September, new list only for POs from 1 October": A("9000010571")
     == 7 * D("1895.00")
     and "of 10 September: 7 KG-3 gateways at EUR 1,895.00" in body("PO-MDS-2026-0361")
     and "POs dated from 1 October" in body("KOL-ERP-2026-09")
-    and "3.1 Prices are as stated in the PO." in A1,
+    and "3.1 Prices are as stated in the PO." in FWA,
     "s6 set-off of 22 June: 900.00 + 4,100.00 = 5,000.00 on MDS-2026-06; 4,100.00 settles RE-2026-0270; agreed in writing naming both; SUB 6 and FWA 8": TX(
         "MDS-2026-06-P1"
     )
@@ -234,7 +253,7 @@ DERIVED = {
     and TX("RE-2026-0270-D1") == A("RE-2026-0270") == D("4100.00")
     and "We agree to this set-off: EUR 4,100.00 of MDS-2026-06 against RE-2026-0270" in body("SETOFF-KOL-2026-06")
     and "only with the written agreement of both parties for each set-off" in SUB
-    and "only with the written agreement of both parties for each set-off" in A1
+    and "only with the written agreement of both parties for each set-off" in FWA
     and "The written agreement names the invoices and the amounts set off." in SUB,
     "s7 RE-2026-0207 = RE-2026-0216 = 20 x 78.00 (PO-0171 in two halves); RE-2026-0244 = RE-2026-0270 = 10 x 410.00, RE-2026-0324 = 12 x 410.00 (PO-0215)": A(
         "RE-2026-0207"
@@ -263,8 +282,8 @@ DERIVED = {
     and "under Section 5.2 of our framework agreement" in body("KOL-INV-9000010412")
     and "We cancelled 9000010412 with credit note 9000000109 and reissued it as 9000010427 with your PO number"
     in body("KOL-INV-9000010412")
-    and "5.2 Every invoice must show the Buyer's PO number." in A1
-    and "only together with a credit note that cancels the original invoice in full" in A1,
+    and "5.2 Every invoice must show the Buyer's PO number." in FWA
+    and "only together with a credit note that cancels the original invoice in full" in FWA,
     "clean RE-2025-0402: 1,200.00 + 8,400.00 = 9,600.00": TX("RE-2025-0402-C1") + TX("RE-2025-0402-P1") == A("RE-2025-0402"),
     "clean: every other invoice settled in full by its due date": all(
         sum(D(t["amount"]) for t in tx.values() if t["invoice_number"] == n and t["kind"] in ("payment", "deduction", "credit_note"))

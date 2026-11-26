@@ -17,7 +17,7 @@
 
 2.3 This agreement does not oblige the Buyer to order a minimum quantity.
 
-2.4 The Supplier delivers Goods **DAP Barcelona** (Incoterms 2020), to the Buyer's premises at Carrer de Pallars 191, 08005 Barcelona. Risk passes to the Buyer on delivery there.
+2.4 The Supplier delivers Goods DAP Barcelona (Incoterms 2020), to the Buyer's premises at Carrer de Pallars 191, 08005 Barcelona. Risk passes to the Buyer on delivery there.
 
 2.5 The Supplier performs Repair Services in its workshop in Dortmund and returns the repaired equipment DAP Barcelona.
 
@@ -37,7 +37,7 @@
 
 4.2 Repair Services are taxed in Spain under the reverse charge (Articles 44 and 196 of Directive 2006/112/EC). For Goods, the Buyer declares an intra-Community acquisition in Spain. In both cases the Buyer self-assesses the Spanish VAT.
 
-4.3 Every invoice shows **no German VAT**, the VAT IDs of both parties, and the note "Steuerfreie innergemeinschaftliche Lieferung" (Goods) or "Steuerschuldnerschaft des Leistungsempfängers / reverse charge" (Repair Services).
+4.3 Every invoice shows no German VAT, the VAT IDs of both parties, and the note "Steuerfreie innergemeinschaftliche Lieferung" (Goods) or "Steuerschuldnerschaft des Leistungsempfängers / reverse charge" (Repair Services).
 
 4.4 The Supplier must not charge German VAT on any supply under this agreement. If an invoice shows VAT or any other amount that is not due under this agreement, the Buyer may hold back that amount and ask for a corrected invoice. The amount held back is not due. The rest of the invoice stays due on the original due date.
 
@@ -47,9 +47,9 @@
 
 5.2 Every invoice must show the Buyer's PO number. The Buyer returns an invoice without a PO number. That invoice is not payable until the Supplier corrects it.
 
-5.3 A corrected invoice replaces the original invoice **only together with a credit note that cancels the original invoice in full**. Until the Supplier issues that credit note, it must not ask for payment of both invoices. The Buyer owes the amount only once.
+5.3 A corrected invoice replaces the original invoice only together with a credit note that cancels the original invoice in full. Until the Supplier issues that credit note, it must not ask for payment of both invoices. The Buyer owes the amount only once.
 
-5.4 Each invoice is payable within **30 days of the invoice date** (Net 30). The Buyer gets no cash discount.
+5.4 Each invoice is payable within 30 days of the invoice date (Net 30). The Buyer gets no cash discount.
 
 5.5 If the Buyer disputes an invoice, it tells the Supplier in writing before the due date and states the disputed amount and the reason. The Buyer pays the undisputed part by the due date. The disputed part is not due until the parties agree. If the dispute is upheld, the Supplier issues a credit note for the agreed amount.
 
@@ -61,7 +61,7 @@
 
 6.2 The Supplier sends a delivery note with each shipment of Goods. The delivery note names the PO number.
 
-6.3 The Buyer may return Goods that are defective on delivery within 30 days of delivery, at the Supplier's cost. The Supplier issues a credit note for the returned Goods at the PO price within 14 days of receiving them or, if the Buyer agrees, replaces them free of charge. The Buyer may deduct an issued credit note from its next payment to the Supplier or ask for a refund; Section 8 does not apply to this. Until the credit note is issued, the invoice stays due in full.
+6.3 The Buyer may return Goods that are defective on delivery within 30 days of delivery, at the Supplier's cost. The Supplier credits returned Goods at the PO price within 14 days of receiving them or, if the Buyer agrees, replaces them free of charge.
 
 ## 7. Bank details
 
@@ -71,17 +71,13 @@
 - Bank: Volksbank Emscherbrück eG
 - IBAN: **DE04 4409 4440 0047 1135 80**
 
-7.2 A change of bank details is valid only if both conditions are met:
+7.2 The Supplier may change its bank details by notice to the Buyer. A notice is valid only if (a) it is a letter on the Supplier's letterhead signed by the Managing Director, and (b) the Buyer confirms it by a phone call to the Managing Director's number in Section 11, not to a number given in the notice.
 
-(a) the Supplier sends it as a **letter on the Supplier's letterhead, signed by the Managing Director**; and
-
-(b) the change is **confirmed by a phone call that the Buyer makes to the Managing Director's number in Section 11**, never to a number given in the change request.
-
-7.3 A change notified only by email is not valid. Until a change is valid under Section 7.2, payments to the bank account in Section 7.1 discharge the Buyer's debt.
+7.3 A change notified only by email is not valid. Only a payment to the bank account last validly notified (at the start, the one in Section 7.1) discharges the Buyer's debt.
 
 ## 8. Set-off
 
-8.1 Amounts under this agreement may be set off against amounts under any other agreement between the same parties, such as a platform subscription, **only with the written agreement of both parties for each set-off**. Email is enough.
+8.1 Amounts under this agreement may be set off against amounts under any other agreement between the same parties, such as a platform subscription, only with the written agreement of both parties for each set-off. Email is enough.
 
 8.2 The written agreement names the invoices and the amounts set off.
 
@@ -91,7 +87,7 @@
 
 9.1 This agreement applies from 1 October 2025 and runs for an indefinite period.
 
-9.2 Either party may terminate it in writing with **3 months' notice to the end of a contract year**.
+9.2 Either party may terminate it in writing with 3 months' notice to the end of a contract year.
 
 9.3 POs confirmed before termination takes effect are completed under this agreement.
 
@@ -105,7 +101,7 @@
 
 ## 11. Contacts
 
-- Supplier, Managing Director: Matthias Kolbe, m.kolbe@kolbe-industrietechnik.example, **+49 231 000 3141** (the number for call-backs under Section 7.2)
+- Supplier, Managing Director: Matthias Kolbe, m.kolbe@kolbe-industrietechnik.example, +49 231 000 3141 (the number for call-backs under Section 7.2)
 - Supplier, receivables team: Sabine Wörner, s.woerner@kolbe-industrietechnik.example, +49 231 000 3157
 - Supplier, payables team: Jonas Reiber, j.reiber@kolbe-industrietechnik.example, +49 231 000 3162
 - Buyer, payables team: Marta Soler Vidal, ap@meridian-data.example, +34 930 000 271

@@ -33,7 +33,7 @@ ERP_BODY_MAIN = (
     "starting with 9000. RE- numbers stop on that date. The invoice layout also changes a little. "
     "Deliveries that we have not invoiced by 25 September are invoiced from the new system.\n\n"
     "Our bank details do not change. Please continue to pay to Ruhrwald Genossenschaftsbank eG, "
-    "IBAN DE07 4409 9570 0047 1135 80, as in Amendment No. 1 to our framework agreement.\n\n"
+    "IBAN DE07 4409 9570 0047 1135 80, as in Mr Kolbe's letter of 9 March.\n\n"
     "Our sales team will send you a new price list, valid for POs dated from 1 October. The KG-3 gateway, for example, "
     "goes down from EUR 1,895.00 to EUR 1,790.00.\n\n"
     "If you have any questions, just let me know."
@@ -285,8 +285,6 @@ mails = [
         "IBAN: DE07 4409 9570 0047 1135 80\n\n"
         "The bank forwards payments to the old IBAN DE04 4409 4440 0047 1135 80 until 30 September 2026.\n\n"
         "The signed letter went out to you by post today. Please call me to confirm before you change anything.\n\n"
-        "I have also signed Amendment No. 1 (KOL-MDS-FWA-2025-001-A1), which updates the bank details. "
-        "Please have it countersigned and send me a copy.\n\n"
         "Mit freundlichen Grüßen\n"
         "Matthias Kolbe\n"
         "Geschäftsführer\n"
@@ -302,8 +300,7 @@ mails = [
         "Dear Mr Kolbe,\n\n"
         "Your letter of 9 March arrived today, thank you. I called you at 14:50 on +49 231 000 3141, the number in Section 11 of our framework agreement, and you confirmed the new IBAN "
         "DE07 4409 9570 0047 1135 80.\n\n"
-        "We have updated your bank details for invoices issued from 1 April 2026. Jordi Puigvert countersigned "
-        "Amendment No. 1 (KOL-MDS-FWA-2025-001-A1) today. The signed copy is on its way to you.\n\n"
+        "We have updated your bank details for invoices issued from 1 April 2026.\n\n"
         "Kind regards,\n" + SIG_MARTA,
     ),
     # return in August 2026, credited in October at the wrong price (p2)
@@ -540,7 +537,7 @@ TICKETS = [
         "2026-10-02T09:20:00+02:00",
         "Webhook retries after your ERP go-live",
         "Your new ERP answered slowly in its first days, so we raised the retry limit of your webhook.",
-        [("30 Sep", "Laia Font", "3.0"), ("1 Oct", "Laia Font", "1.5")],
+        [("1 Oct", "Laia Font", "4.5")],
     ),
     (
         "0712",
