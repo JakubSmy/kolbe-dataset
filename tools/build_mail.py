@@ -597,8 +597,11 @@ for day, items in runs.items():
         else:
             lines.append(f"{n} of {long_date(inv['issue_date'])}: EUR {paid:,.2f}")
     total = sum(p for _, p in items)
+    paid_to = {invs[n]["iban"] for n, _ in items}
+    assert len(paid_to) == 1, (day, paid_to)
     body = (
-        f"Dear Ms Wörner,\n\nThis is an automatic payment advice. Today we transferred EUR {total:,.2f}, payment reference MDS-PAYRUN-{day}.\n\n"
+        f"Dear Ms Wörner,\n\nThis is an automatic payment advice. Today we transferred EUR {total:,.2f} to IBAN {paid_to.pop()}, "
+        f"payment reference MDS-PAYRUN-{day}.\n\n"
         + "\n".join(lines)
         + (f"\nTotal: EUR {total:,.2f}" if len(items) > 1 else "")
         + "\n\n"

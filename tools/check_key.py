@@ -146,7 +146,20 @@ DERIVED = {
     and "Only a payment to the bank account last validly notified (at the start, the one in Section 7.1) discharges the Buyer's debt."
     in FWA
     and "name check" in last["body"],
-    "p1/p2 4,480.00 - 3,580.00 = 900.00": A("9000010427") - TX("RE-2026-0318-C1") == D("900.00"),
+    "p1/p2 4,480.00 - 3,580.00 = 900.00 if the credit is deducted, 4,480.00 if it is refunded": A("9000010427") - TX("RE-2026-0318-C1")
+    == D("900.00")
+    and A("9000010427") == D("4480.00"),
+    "p2 RE-2026-0318 balance 9,475.00 - 9,475.00 paid - 3,580.00 credit = -3,580.00": A("RE-2026-0318")
+    - TX("RE-2026-0318-P1")
+    - TX("RE-2026-0318-C1")
+    == D("-3580.00"),
+    "s1 March invoices RE-2026-0142 and RE-2026-0156 paid in April to the old IBAN (payment advices name it)": all(
+        "to IBAN DE04440944400047113580," in body(f"MDS-PAYRUN-{tx[n + '-P1']['occurred_at']}")
+        and inv[n]["iban"] == "DE04440944400047113580"
+        and tx[n + "-P1"]["occurred_at"] in ("2026-04-17", "2026-04-24")
+        for n in ("RE-2026-0142", "RE-2026-0156")
+    )
+    and "forwards payments to the old IBAN DE04 4409 4440 0047 1135 80 until 30 September 2026" in body("KOL-BANK-2026-03"),
     "p2 FWA 6.3 credit at the PO price within 14 days; Kolbe's credit note mail allows the deduction; FWA 8.1/8.3 set-off only with written agreement": "credits returned Goods at the PO price within 14 days"
     in FWA
     and "Section 8 does not apply" not in FWA
@@ -254,7 +267,13 @@ DERIVED = {
     and "We agree to this set-off: EUR 4,100.00 of MDS-2026-06 against RE-2026-0270" in body("SETOFF-KOL-2026-06")
     and "only with the written agreement of both parties for each set-off" in SUB
     and "only with the written agreement of both parties for each set-off" in FWA
-    and "The written agreement names the invoices and the amounts set off." in SUB,
+    and "The written agreement names the invoices and the amounts set off." in SUB
+    and (tx["MDS-2026-06-D1"]["external_ref"], tx["RE-2026-0270-D1"]["external_ref"]) == ("SETOFF-MDS-2026-06", "SETOFF-RE-2026-0270"),
+    "external_ref: rows that move no money (credit notes, deductions) each have their own; a shared one is one transfer": all(
+        t["external_ref"] and sum(x["external_ref"] == t["external_ref"] for x in tx.values()) == 1
+        for t in tx.values()
+        if t["kind"] in ("credit_note", "deduction")
+    ),
     "s7 RE-2026-0207 = RE-2026-0216 = 20 x 78.00 (PO-0171 in two halves); RE-2026-0244 = RE-2026-0270 = 10 x 410.00, RE-2026-0324 = 12 x 410.00 (PO-0215)": A(
         "RE-2026-0207"
     )

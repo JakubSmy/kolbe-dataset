@@ -1,14 +1,14 @@
 seq,thread,direction,sent_at,sender,recipient,subject,body,attachment
 1,MDS-PAYRUN-2025-11-07,outbound,2025-11-07T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 7 November 2025","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 14,315.00, payment reference MDS-PAYRUN-2025-11-07.
+This is an automatic payment advice. Today we transferred EUR 14,315.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2025-11-07.
 
 RE-2025-0311 of 14 October 2025: EUR 14,315.00
 
 Meridian Data Systems, payables team",
 2,MDS-PAYRUN-2025-11-21,outbound,2025-11-21T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 21 November 2025","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 2,340.00, payment reference MDS-PAYRUN-2025-11-21.
+This is an automatic payment advice. Today we transferred EUR 2,340.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2025-11-21.
 
 RE-2025-0338 of 28 October 2025: EUR 2,340.00
 
@@ -47,35 +47,35 @@ Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
 6,MDS-PAYRUN-2025-12-12,outbound,2025-12-12T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 12 December 2025","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 8,400.00, payment reference MDS-PAYRUN-2025-12-12.
+This is an automatic payment advice. Today we transferred EUR 8,400.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2025-12-12.
 
 RE-2025-0402 of 18 November 2025: EUR 9,600.00 less your credit note GS-2025-0047 (EUR 1,200.00): EUR 8,400.00
 
 Meridian Data Systems, payables team",
 7,MDS-PAYRUN-2025-12-19,outbound,2025-12-19T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 19 December 2025","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 3,615.00, payment reference MDS-PAYRUN-2025-12-19.
+This is an automatic payment advice. Today we transferred EUR 3,615.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2025-12-19.
 
 RE-2025-0439 of 2 December 2025: EUR 3,615.00
 
 Meridian Data Systems, payables team",
 8,MDS-PAYRUN-2026-01-09,outbound,2026-01-09T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 9 January 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 11,425.00, payment reference MDS-PAYRUN-2026-01-09.
+This is an automatic payment advice. Today we transferred EUR 11,425.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-01-09.
 
 RE-2025-0477 of 16 December 2025: EUR 11,425.00
 
 Meridian Data Systems, payables team",
 9,MDS-PAYRUN-2026-01-30,outbound,2026-01-30T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 30 January 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 2,090.00, payment reference MDS-PAYRUN-2026-01-30.
+This is an automatic payment advice. Today we transferred EUR 2,090.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-01-30.
 
 RE-2026-0012 of 8 January 2026: EUR 2,090.00
 
 Meridian Data Systems, payables team",
 10,MDS-PAYRUN-2026-02-13,outbound,2026-02-13T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 13 February 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 8,940.00, payment reference MDS-PAYRUN-2026-02-13.
+This is an automatic payment advice. Today we transferred EUR 8,940.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-02-13.
 
 RE-2026-0031 of 20 January 2026: EUR 8,940.00
 
@@ -119,7 +119,7 @@ Meridian Data Systems S.L.
 +34 930 000 271",
 14,MDS-PAYRUN-2026-03-13,outbound,2026-03-13T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 13 March 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 12,500.00, payment reference MDS-PAYRUN-2026-03-13.
+This is an automatic payment advice. Today we transferred EUR 12,500.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-03-13.
 
 RE-2026-0089 of 17 February 2026: EUR 12,500.00
 
@@ -135,7 +135,7 @@ Best regards
 Meridian Data Systems, customer support",
 16,MDS-PAYRUN-2026-03-27,outbound,2026-03-27T10:01:00+01:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 27 March 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 2,880.00, payment reference MDS-PAYRUN-2026-03-27.
+This is an automatic payment advice. Today we transferred EUR 2,880.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-03-27.
 
 RE-2026-0107 of 3 March 2026: EUR 2,880.00
 
@@ -151,7 +151,7 @@ Best regards
 Meridian Data Systems, customer support",
 18,MDS-PAYRUN-2026-04-17,outbound,2026-04-17T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 17 April 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 7,380.00, payment reference MDS-PAYRUN-2026-04-17.
+This is an automatic payment advice. Today we transferred EUR 7,380.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-04-17.
 
 RE-2026-0142 of 19 March 2026: EUR 7,380.00
 
@@ -168,7 +168,7 @@ Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
 20,MDS-PAYRUN-2026-04-24,outbound,2026-04-24T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 24 April 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 1,345.00, payment reference MDS-PAYRUN-2026-04-24.
+This is an automatic payment advice. Today we transferred EUR 1,345.00 to IBAN DE04440944400047113580, payment reference MDS-PAYRUN-2026-04-24.
 
 RE-2026-0156 of 31 March 2026: EUR 1,345.00
 
@@ -195,7 +195,7 @@ Best regards
 Meridian Data Systems, customer support",
 23,MDS-PAYRUN-2026-05-08,outbound,2026-05-08T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 8 May 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 2,215.00, payment reference MDS-PAYRUN-2026-05-08.
+This is an automatic payment advice. Today we transferred EUR 2,215.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-05-08.
 
 RE-2026-0174 of 8 April 2026: EUR 2,215.00
 
@@ -212,7 +212,7 @@ Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
 25,MDS-PAYRUN-2026-05-15,outbound,2026-05-15T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 15 May 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 13,050.00, payment reference MDS-PAYRUN-2026-05-15.
+This is an automatic payment advice. Today we transferred EUR 13,050.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-05-15.
 
 RE-2026-0191 of 21 April 2026: EUR 13,050.00
 
@@ -229,14 +229,14 @@ Best regards
 Meridian Data Systems, customer support",
 27,MDS-PAYRUN-2026-05-22,outbound,2026-05-22T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 22 May 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 1,560.00, payment reference MDS-PAYRUN-2026-05-22.
+This is an automatic payment advice. Today we transferred EUR 1,560.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-05-22.
 
 RE-2026-0207 of 28 April 2026: EUR 1,560.00
 
 Meridian Data Systems, payables team",
 28,MDS-PAYRUN-2026-05-29,outbound,2026-05-29T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 29 May 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 1,560.00, payment reference MDS-PAYRUN-2026-05-29.
+This is an automatic payment advice. Today we transferred EUR 1,560.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-05-29.
 
 RE-2026-0216 of 5 May 2026: EUR 1,560.00
 
@@ -261,7 +261,7 @@ Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
 31,MDS-PAYRUN-2026-06-12,outbound,2026-06-12T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 12 June 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 4,100.00, payment reference MDS-PAYRUN-2026-06-12.
+This is an automatic payment advice. Today we transferred EUR 4,100.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-06-12.
 
 RE-2026-0244 of 15 May 2026: EUR 4,100.00
 
@@ -354,7 +354,7 @@ Best regards
 Meridian Data Systems, customer support",
 41,MDS-PAYRUN-2026-07-17,outbound,2026-07-17T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 17 July 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 15,920.00, payment reference MDS-PAYRUN-2026-07-17.
+This is an automatic payment advice. Today we transferred EUR 15,920.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-07-17.
 
 RE-2026-0281 of 23 June 2026: EUR 15,920.00
 
@@ -399,7 +399,7 @@ Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
 46,MDS-PAYRUN-2026-08-14,outbound,2026-08-14T10:02:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 14 August 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 14,395.00, payment reference MDS-PAYRUN-2026-08-14.
+This is an automatic payment advice. Today we transferred EUR 14,395.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-08-14.
 
 RE-2026-0318 of 21 July 2026: EUR 9,475.00
 RE-2026-0324 of 24 July 2026: EUR 4,920.00
@@ -436,7 +436,7 @@ Best regards
 Meridian Data Systems, customer support",
 50,MDS-PAYRUN-2026-08-21,outbound,2026-08-21T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 21 August 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 2,430.00, payment reference MDS-PAYRUN-2026-08-21.
+This is an automatic payment advice. Today we transferred EUR 2,430.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-08-21.
 
 RE-2026-0331 of 30 July 2026: EUR 2,430.00
 
@@ -471,7 +471,7 @@ Best regards
 Meridian Data Systems, customer support",
 54,MDS-PAYRUN-2026-09-04,outbound,2026-09-04T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 4 September 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 6,210.00, payment reference MDS-PAYRUN-2026-09-04.
+This is an automatic payment advice. Today we transferred EUR 6,210.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-09-04.
 
 RE-2026-0350 of 18 August 2026: EUR 6,210.00
 
@@ -591,7 +591,7 @@ Bank: Ruhrwald Genossenschaftsbank eG, IBAN DE07 4409 9570 0047 1135 80
 Please do not reply to this email.",
 66,MDS-PAYRUN-2026-10-09,outbound,2026-10-09T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 9 October 2026","Dear Ms Wörner,
 
-This is an automatic payment advice. Today we transferred EUR 3,200.00, payment reference MDS-PAYRUN-2026-10-09.
+This is an automatic payment advice. Today we transferred EUR 3,200.00 to IBAN DE07440995700047113580, payment reference MDS-PAYRUN-2026-10-09.
 
 RE-2026-0379 of 15 September 2026: EUR 3,200.00
 

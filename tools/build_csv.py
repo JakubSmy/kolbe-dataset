@@ -184,12 +184,13 @@ full("MDS-2026-05", "2026-05-28", "KOL-ZA-26-05-28")
 # June: set-off agreed by email under SUB 6 and FWA 8 (mail thread SETOFF-KOL-2026-06): MDS-2026-06 (5,000.00) against
 # RE-2026-0270 (4,100.00). Kolbe pays the rest, 900.00; Meridian does not pay RE-2026-0270 (decoy s6)
 t("MDS-2026-06-P1", "in", "MDS-2026-06", "2026-06-26", "900.00", "payment", "KOL-ZA-26-06-26")
-t("MDS-2026-06-D1", "in", "MDS-2026-06", "2026-06-26", "4100.00", "deduction", "SETOFF-KOL-2026-06", method="")
-t("RE-2026-0270-D1", "out", "RE-2026-0270", "2026-06-26", "4100.00", "deduction", "SETOFF-KOL-2026-06", method="")
+# a row that moves no money has its own external_ref: the credit note number, or <KIND>-<invoice> for a deduction
+t("MDS-2026-06-D1", "in", "MDS-2026-06", "2026-06-26", "4100.00", "deduction", "SETOFF-MDS-2026-06", method="")
+t("RE-2026-0270-D1", "out", "RE-2026-0270", "2026-06-26", "4100.00", "deduction", "SETOFF-RE-2026-0270", method="")
 full("MDS-2026-07", "2026-07-28", "KOL-ZA-26-07-28")
 # August: Kolbe takes the 2% cash discount of SUB 4.7 and pays on 2026-08-11, the 10th calendar day after the issue date: valid (decoy s5)
 t("MDS-2026-08-P1", "in", "MDS-2026-08", "2026-08-11", "4900.00", "payment", "KOL-ZA-26-08-11")
-t("MDS-2026-08-D1", "in", "MDS-2026-08", "2026-08-11", "100.00", "deduction", "KOL-ZA-26-08-11", method="")
+t("MDS-2026-08-D1", "in", "MDS-2026-08", "2026-08-11", "100.00", "deduction", "DISCOUNT-MDS-2026-08", method="")
 full("MDS-2026-09", "2026-09-29", "KOL-ZA-26-09-29")
 # MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3); Q3 support (20.0 h by work date) is exactly the 20-hour quota (s4)
 

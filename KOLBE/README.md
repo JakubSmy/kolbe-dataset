@@ -21,8 +21,8 @@ Kolbe (Dortmund, Germany) makes IoT gateways and sensors. Kolbe is a supplier an
 - **"Now":** Thursday 2026-10-22, the date of mail 70. ("Mail 70" is the row with `seq` 70.) Meridian pays Kolbe on Fridays, so the next payment is tomorrow.
 - **Money:** EUR. Due 30 days after the invoice date. No VAT: goods go between two EU countries (framework Section 4.1); the platform is reverse charge (platform Section 3.2).
 - **IBANs:**
-  - Kolbe old: DE04440944400047113580. Framework Section 7.1, mail 12, invoices up to RE-2026-0156.
-  - Kolbe new: DE07440995700047113580. Mails 12, 13, 57, 61, 65, invoices from RE-2026-0174.
+  - Kolbe old: DE04440944400047113580. Framework Section 7.1, mail 12, invoices up to RE-2026-0156, payment advices up to 24 April 2026.
+  - Kolbe new: DE07440995700047113580. Mails 12, 13, 57, 61, 65, invoices from RE-2026-0174, payment advices from 8 May 2026.
   - Meridian: ES4399173305310002184466. Platform Section 5.1, all platform invoices.
   - Fraud: LT733999000012847561. Only mail 69.
 
@@ -31,10 +31,10 @@ Kolbe (Dortmund, Germany) makes IoT gateways and sensors. Kolbe is a supplier an
 **p1. Fraud: bank change confirmed on the fraudster's phone number** (`cross_source`, a person must decide). EUR 17,745.00.
 Mail 69 comes from Sabine Wörner's real Kolbe mailbox, but a fraudster wrote it. It asks Meridian to pay 9000010427 (4,480.00) and 9000010571 (13,265.00) to the Lithuanian IBAN and to confirm on +49 231 000 3175. Her real number is 3157. In mail 70, Meridian called 3175, the bank's name check matched, and Meridian will pay tomorrow.
 Rule: framework Section 7.2: confirm a bank change only by a call to the Managing Director's number in Section 11, +49 231 000 3141. A name check does not replace the call. Section 7.3: only a payment to the last validly notified bank account, DE07440995700047113580 (mails 12, 13), pays the debt.
-Next step: stop the payment. Call +49 231 000 3141. A person decides. Set the IBAN back to DE07440995700047113580 and warn Kolbe.
+Next step: stop the payment. Call +49 231 000 3141. A person decides. Set the IBAN back to DE07440995700047113580 and warn Kolbe. Pay 9000010427 only to DE07440995700047113580: 900.00 if the p2 credit is deducted, 4,480.00 if Kolbe refunds it.
 
 **p2. Credit note uses the wrong price** (`contract`). EUR 210.00.
-Meridian returned 2 gateways from RE-2026-0318 (mails 47, 51). Kolbe's credit note came late and uses the new list price: 2 × 1,790.00 = 3,580.00 (mail 67). Meridian had paid RE-2026-0318 in full, so the data shows 3,580.00 paid too much. That is this credit note.
+Meridian returned 2 gateways from RE-2026-0318 (mails 47, 51). Kolbe's credit note came late and uses the new list price: 2 × 1,790.00 = 3,580.00 (mail 67). Meridian had paid RE-2026-0318 in full, so RE-2026-0318 shows a balance of -3,580.00. This credit balance is part of p2, not a separate finding.
 Rule: framework Section 6.3: the order price applies: 2 × 1,895.00 = 3,790.00.
 Next step: deduct 3,580.00 (pay 900.00 instead of 4,480.00 on 9000010427), as Kolbe allows in mail 67, or ask Kolbe to pay it back. Ask Kolbe in writing for the missing 210.00. Do not deduct the 210.00 before Kolbe agrees (framework Section 8: set-off only with written agreement).
 
@@ -51,7 +51,7 @@ Next step: do not pay 9000010498. Before 5 November, tell Kolbe in writing that 
 
 A decoy looks wrong but is correct. Do not report it.
 
-- **s1.** Kolbe's IBAN changed for invoices from 1 April, with no amendment to the agreement. Correct: framework Section 7.2 asks only for a signed letter and a call to the Section 11 number, and both happened (mails 12, 13). The March invoices were paid to the old IBAN in April; the letter says the bank forwards these payments until 30 September.
+- **s1.** Kolbe's IBAN changed for invoices from 1 April, with no amendment to the agreement. Correct: framework Section 7.2 asks only for a signed letter and a call to the Section 11 number, and both happened (mails 12, 13). The March invoices were paid to the old IBAN in April (payment advices, mails 18 and 20); the letter says the bank forwards these payments until 30 September.
 - **s2.** 9000010571 uses the old gateway price, 1,895.00. Correct: the new price list is for orders from 1 October (mail 57). This order is from 10 September (mail 56). Not 735.00 too much.
 - **s3.** 257 users in June. Correct: only from 3 to 26 June (mails 29, 36). On 1 June and 1 July: 232. Not 175.00 due.
 - **s4.** Q2 support hours add up to 23.5. Correct: 12 hours were for a fault in Meridian's platform (mail 22) and do not count (platform Section 2.3). Q2 is 11.5 hours. Not 420.00 due.
@@ -68,7 +68,7 @@ A decoy looks wrong but is correct. Do not report it.
 - RE-2025-0402: 8,400.00 paid plus a 1,200.00 credit note for a returned gateway (mails 3, 4).
 - 9000010412: cancelled by credit note 9000000109 (s9), 0.00 open.
 - Open on "now", none overdue: 9000010427 (due 29 October), MDS-2026-10 (due 31 October), 9000010498 (p4), 9000010571 (due 12 November).
-- The discount (s5) and both sides of the offset (s6) are `deduction` rows. SETOFF-KOL-2026-06 links the two s6 rows. No money moved for them.
+- The discount (s5) and both sides of the offset (s6) are `deduction` rows. No money moved for them, so each has its own `external_ref` (DISCOUNT-MDS-2026-08, SETOFF-MDS-2026-06, SETOFF-RE-2026-0270), like each credit note. A shared `external_ref` means one transfer.
 
 ## How I made it
 
