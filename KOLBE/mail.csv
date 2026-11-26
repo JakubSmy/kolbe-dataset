@@ -290,7 +290,7 @@ Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
 34,SETOFF-KOL-2026-06,outbound,2026-06-22T10:15:00+02:00,ar@meridian-data.example,j.reiber@kolbe-industrietechnik.example,Re: Set-off proposal: MDS-2026-06 and RE-2026-0270,"Hello Mr Reiber,
 
-We agree to this set-off: EUR 4,100.00 of MDS-2026-06 against RE-2026-0270 (EUR 4,100.00). MDS-2026-06 is settled when we receive EUR 900.00. I have asked our payables team (Marta Soler) to block RE-2026-0270 for payment.
+We agree to this set-off: EUR 4,100.00 of MDS-2026-06 against RE-2026-0270 (EUR 4,100.00). MDS-2026-06 is settled when we receive EUR 900.00. I have asked our payables team (Marta Soler) to stop payment of RE-2026-0270.
 
 Kind regards,
 Núria Ferrer Bosch
@@ -388,7 +388,7 @@ Best regards
 Meridian Data Systems, customer support",
 45,KOL-ZA-26-08-11,inbound,2026-08-11T09:30:00+02:00,j.reiber@kolbe-industrietechnik.example,ar@meridian-data.example,Payment advice MDS-2026-08,"Hello Ms Ferrer,
 
-today we paid your invoice MDS-2026-08 of 1 August by instant transfer: EUR 5,000.00 less 2% cash discount (EUR 100.00), so EUR 4,900.00 (Skonto).
+today we paid your invoice MDS-2026-08 of 1 August by instant transfer: EUR 5,000.00 less 2% cash discount (EUR 100.00), so EUR 4,900.00.
 
 Viele Grüße
 Jonas Reiber
@@ -598,7 +598,7 @@ RE-2026-0379 of 15 September 2026: EUR 3,200.00
 Meridian Data Systems, payables team",
 67,RET-RE-2026-0318,inbound,2026-10-09T14:40:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Return: two gateways from invoice RE-2026-0318,"Hello Ms Soler,
 
-sorry for the delay, our ERP move held it up. We have issued credit note 9000000117 for the two returned gateways (KG-7731, KG-7734): 2 x EUR 1,790.00 = EUR 3,580.00 against RE-2026-0318. You may deduct it from your next payment.
+sorry for the delay, our ERP move held it up. We have issued credit note 9000000117 for the two returned gateways (KG-7731, KG-7734): 2 x EUR 1,790.00 = EUR 3,580.00 against RE-2026-0318. You may deduct it from your payment of invoice 9000010427.
 
 Viele Grüße
 Sabine Wörner
@@ -645,7 +645,7 @@ Kolbe Industrietechnik GmbH
 > ...",
 70,KOL-ERP-2026-09,outbound,2026-10-22T08:53:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Ms Wörner,
 
-Mr Kolbe's signed letter arrived yesterday by courier. I then called +49 231 000 3175, the number in the letter, and your finance office confirmed the new bank account. Our bank's name check on the new IBAN, the check every euro transfer now gets, also returned a match for Kolbe Industrietechnik GmbH. We have updated our records and will pay 9000010427 and 9000010571 in our payment run on Friday, 23 October, to Baltrava Payments UAB. As you asked, this includes 9000010571, although it is due only on 12 November.
+Mr Kolbe's signed letter arrived yesterday by courier. I then called +49 231 000 3175, the number in the letter, and your finance office confirmed the new bank account. Our bank's name check on the new IBAN also returned a match for Kolbe Industrietechnik GmbH. We have updated our records and will pay 9000010427 and 9000010571 in our payment run on Friday, 23 October, to Baltrava Payments UAB.
 
 Kind regards,
 Marta Soler Vidal

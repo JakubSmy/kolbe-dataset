@@ -163,7 +163,7 @@ DERIVED = {
     "p2 FWA 6.3 credit at the PO price within 14 days; Kolbe's credit note mail allows the deduction; FWA 8.1/8.3 set-off only with written agreement": "credits returned Goods at the PO price within 14 days"
     in FWA
     and "Section 8 does not apply" not in FWA
-    and "You may deduct it from your next payment." in body("RET-RE-2026-0318")
+    and "You may deduct it from your payment of invoice 9000010427." in body("RET-RE-2026-0318")
     and "8.3 Section 8.1 and Section 8.2 also apply to any set-off within this agreement." in FWA
     and "Email is enough." in FWA,
     "p2 2026-09-07 = 2026-08-24 + 14 days, 32 days late": (dt.date(2026, 8, 24) + dt.timedelta(days=14)).isoformat() == "2026-09-07"

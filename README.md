@@ -30,4 +30,4 @@ make zip     # build dist/KOLBE.zip
 
 ## How it was built
 
-I chose the cases; Claude Code wrote the generators and drafts from those choices, and I reviewed every case against its clause by hand. `make check` makes sure every invoice, mail and amount the answer key cites exists in the data. Agents that saw only the data were used as a sanity check ([docs/blind-runs.md](docs/blind-runs.md)). I iterated locally and squashed the work into a few commits before publishing.
+I chose the cases; Claude Code wrote the generators and drafts from those choices, and I reviewed every case against its clause by hand. `make check` makes sure every invoice, mail and amount the answer key cites exists in the data. Agents that saw only the data were used as a sanity check ([docs/blind-runs.md](docs/blind-runs.md)). I iterated locally and squashed the first work into four commits; the later commits add decoy s9, rewrite the agreements and fix what reviews found.

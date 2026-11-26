@@ -86,7 +86,7 @@ mails = [
         REIBER,
         "Re: Set-off proposal: MDS-2026-06 and RE-2026-0270",
         "Hello Mr Reiber,\n\nWe agree to this set-off: EUR 4,100.00 of MDS-2026-06 against RE-2026-0270 (EUR 4,100.00). "
-        "MDS-2026-06 is settled when we receive EUR 900.00. I have asked our payables team (Marta Soler) to block RE-2026-0270 for payment.\n\n"
+        "MDS-2026-06 is settled when we receive EUR 900.00. I have asked our payables team (Marta Soler) to stop payment of RE-2026-0270.\n\n"
         "Kind regards,\n" + SIG_NURIA,
     ),
     (
@@ -108,7 +108,7 @@ mails = [
         AR,
         "Payment advice MDS-2026-08",
         "Hello Ms Ferrer,\n\ntoday we paid your invoice MDS-2026-08 of 1 August by instant transfer: EUR 5,000.00 less 2% cash discount (EUR 100.00), "
-        "so EUR 4,900.00 (Skonto).\n\nViele Grüße\n" + SIG_REIBER,
+        "so EUR 4,900.00.\n\nViele Grüße\n" + SIG_REIBER,
     ),
     # PO-MDS-2026-0215: 32 kits in call-offs of 10, 10 and 12
     (
@@ -347,7 +347,7 @@ mails = [
         "Re: Return: two gateways from invoice RE-2026-0318",
         "Hello Ms Soler,\n\n"
         "sorry for the delay, our ERP move held it up. We have issued credit note 9000000117 for the two returned "
-        "gateways (KG-7731, KG-7734): 2 x EUR 1,790.00 = EUR 3,580.00 against RE-2026-0318. You may deduct it from your next payment.\n\n"
+        "gateways (KG-7731, KG-7734): 2 x EUR 1,790.00 = EUR 3,580.00 against RE-2026-0318. You may deduct it from your payment of invoice 9000010427.\n\n"
         "Viele Grüße\n" + SIG_WOERNER,
     ),
     # p1: reply from Kolbe's real, compromised mailbox, with a forged letter; Meridian calls the number given in it
@@ -391,8 +391,8 @@ mails = [
         "Re: " + ERP_SUBJECT,
         "Dear Ms Wörner,\n\n"
         "Mr Kolbe's signed letter arrived yesterday by courier. I then called +49 231 000 3175, the number in the letter, and your finance "
-        "office confirmed the new bank account. Our bank's name check on the new IBAN, the check every euro transfer now gets, also returned a match for Kolbe Industrietechnik GmbH. We have updated our records and will pay 9000010427 and 9000010571 in our "
-        "payment run on Friday, 23 October, to Baltrava Payments UAB. As you asked, this includes 9000010571, although it is due only on 12 November.\n\n"
+        "office confirmed the new bank account. Our bank's name check on the new IBAN also returned a match for Kolbe Industrietechnik GmbH. We have updated our records and will pay 9000010427 and 9000010571 in our "
+        "payment run on Friday, 23 October, to Baltrava Payments UAB.\n\n"
         "Kind regards,\n" + SIG_MARTA,
     ),
 ]

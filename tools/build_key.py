@@ -67,7 +67,10 @@ assert (owed, short) == (D("3790.00"), D("210.00"))
 s_ret = [m["seq"] for m in mail if m["thread"] == "RET-RE-2026-0318"]
 late = (d(tx["RE-2026-0318-C1"]["occurred_at"]) - d("2026-09-07")).days
 assert late == 32
-assert "You may deduct it from your next payment." in mail[int(s_ret[2]) - 1]["body"] and mail[int(s_ret[2]) - 1]["direction"] == "inbound"
+assert (
+    "You may deduct it from your payment of invoice 9000010427." in mail[int(s_ret[2]) - 1]["body"]
+    and mail[int(s_ret[2]) - 1]["direction"] == "inbound"
+)
 pay_net = a("9000010427") - cn
 assert pay_net == D("900.00")
 
@@ -231,7 +234,7 @@ P.append(
         task=["human"],
         description=(
             f"Mail seq {s_fake} (2026-10-20), from Sabine Wörner's real address, asks to pay 9000010427 and 9000010571 ({eur(at_risk)}) to "
-            "LT733999000012847561 and gives +49 231 000 3175 to confirm. It omits 9000010498, which Kolbe's ERP sent automatically. "
+            "LT733999000012847561 and gives +49 231 000 3175 to confirm. It leaves out 9000010498, which came from Kolbe's invoicing system (invoices@), not from her mailbox. "
             f"Mail seq {s_erp}: Kolbe's bank details do not change. Mail seq {s_conf} (now): Meridian called 3175, saw a matching bank name check, "
             "and will pay on Friday 2026-10-23. Section 7.2 of KOL-MDS-FWA-2025-001: a bank change is confirmed only by a call to the Managing Director's "
             f"number in Section 11 (+49 231 000 3141), not to a number in the notice, and email alone is not valid (Section 7.3). Only a payment to "
@@ -255,7 +258,7 @@ P.append(
             f"Right: 2 x {eur(unit_po)} = {eur(owed)}, so {eur(short)} short. Because the credit came after full payment, RE-2026-0318 shows a balance of "
             f"-{cn:,.2f} ({eur(cn)} paid too much); this credit balance is part of p2, not a separate finding. Right move: "
             f"deduct {eur(cn)} from the next payment ({eur(pay_net)} on 9000010427), as Kolbe's mail seq {s_ret[2]} allows ('You may deduct it from your "
-            "next payment'; Section 8.1 of KOL-MDS-FWA-2025-001: email is enough), or ask for a refund, and claim "
+            "payment of invoice 9000010427'; Sections 8.1 and 8.2 of KOL-MDS-FWA-2025-001: email is enough if it names invoice and amount), or ask for a refund, and claim "
             f"{eur(short)} in writing (or ask for a credit note of {eur(owed)} in place of 9000000117). "
             f"Missed: accepting {eur(cn)}, or deducting the {eur(short)} before Kolbe agrees (Sections 8.1 and 8.3 of KOL-MDS-FWA-2025-001: a set-off "
             "needs the written agreement of both parties), for example paying EUR 690.00."
@@ -369,7 +372,7 @@ S.append(
         description=(
             f"MDS-2026-06 received only {eur(amt('MDS-2026-06-P1'))} in cash, and RE-2026-0270 ({eur(a('RE-2026-0270'))}) was never paid by transfer. "
             "Both are settled by a set-off (MDS-2026-06-D1, RE-2026-0270-D1, external_ref SETOFF-MDS-2026-06 and SETOFF-RE-2026-0270, mail thread SETOFF-KOL-2026-06): Kolbe proposed it (mail seq "
-            f"{s_so1}), Meridian agreed in writing naming both invoices and the amount (mail seq {s_so2}), Kolbe paid the rest (mail seq {s_so3}). "
+            f"{s_so1}), Meridian agreed in writing naming both invoices and the amount (mail seq {s_so2}), Kolbe paid the rest (payment advice, mail seq {s_so3}). "
             "Section 6 of MDS-KOL-SUB-2025-001 and Section 8 of KOL-MDS-FWA-2025-001 allow this. The agent must not claim EUR 4,100.00 or pay "
             "RE-2026-0270."
         ),

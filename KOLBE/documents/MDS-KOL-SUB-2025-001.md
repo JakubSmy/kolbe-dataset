@@ -21,13 +21,13 @@
 
 3.1 The Customer pays EUR 5,000.00 per month for the Business plan, without VAT.
 
-3.2 The service is a business-to-business service to a business established in Germany. The place of supply is Germany (Article 44 of Directive 2006/112/EC). The Customer pays the German VAT under the reverse charge (Article 196 of Directive 2006/112/EC). Invoices show no VAT, the VAT IDs of both parties and the note "Reverse charge". Each monthly invoice is therefore the fee of Section 3.1, plus any named users above the limit under Section 2.2 and any support hours due under Section 2.3.
+3.2 The service is a business-to-business service to a business established in Germany. The place of supply is Germany (Article 44 of Directive 2006/112/EC). The Customer pays the German VAT under the reverse charge (Article 196 of Directive 2006/112/EC). Invoices show no VAT, the VAT IDs of both parties and the note "Reverse charge".
 
 3.3 The fee in Section 3.1 is fixed for the initial term in Section 7.1.
 
 ## 4. Invoicing and payment
 
-4.1 The Provider issues one invoice on the 1st day of each month, in advance for that month, in EUR.
+4.1 The Provider issues one invoice on the 1st day of each month, in advance for that month, in EUR. It shows the fee of Section 3.1 and any named users above the limit under Section 2.2 and support hours due under Section 2.3.
 
 4.2 Each invoice is payable within 30 days of its issue date (Net 30). If a due date is not a business day in Barcelona, payment on the next business day is on time.
 
