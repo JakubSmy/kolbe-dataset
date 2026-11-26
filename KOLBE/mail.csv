@@ -543,9 +543,27 @@ Time booked:
 
 Best regards
 Meridian Data Systems, customer support",
-61,KOL-INV-9000010427,inbound,2026-09-29T11:05:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice 9000010427 from our new system,"Dear Ms Soler,
+61,KOL-INV-9000010412,inbound,2026-09-28T08:05:00+02:00,invoices@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice 9000010412,"This is an automatic message from Kolbe Industrietechnik GmbH.
 
-we have sent you our first invoice to Meridian from the new system: 9000010427, for the other 7 KS-8 sensor hubs of PO-MDS-2026-0342 (delivery note LS-2026-1342 of 28 September): 7 x EUR 640.00 = EUR 4,480.00. Please tell me if the new layout causes any problems on your side.
+Invoice: 9000010412 of 28 September 2026
+Delivery note: LS-2026-1342 of 28 September 2026
+7 KS-8 sensor hubs at EUR 640.00: EUR 4,480.00
+Due date: 28 October 2026
+Bank: Ruhrwald Genossenschaftsbank eG, IBAN DE07 4409 9570 0047 1135 80
+
+Please do not reply to this email.",
+62,KOL-INV-9000010412,outbound,2026-09-28T13:40:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Invoice 9000010412 returned: no PO number,"Hello Ms Wörner,
+
+Your invoice 9000010412 of today (EUR 4,480.00) shows no PO number, so we return it under Section 5.2 of our framework agreement. Please send us a corrected invoice.
+
+Kind regards,
+Marta Soler Vidal
+Payables team
+Meridian Data Systems S.L.
++34 930 000 271",
+63,KOL-INV-9000010412,inbound,2026-09-29T11:05:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Invoice 9000010412 returned: no PO number,"Dear Ms Soler,
+
+sorry, that was our first invoice from the new system. We cancelled 9000010412 with credit note 9000000109 and reissued it as 9000010427 with your PO number: the other 7 KS-8 sensor hubs of PO-MDS-2026-0342 (delivery note LS-2026-1342 of 28 September), 7 x EUR 640.00 = EUR 4,480.00. Please tell me if the new layout causes any problems on your side.
 
 Viele Grüße
 Sabine Wörner
@@ -554,17 +572,17 @@ Kolbe Industrietechnik GmbH
 +49 231 000 3157
 Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
-62,MDS-SUP-26-0650,outbound,2026-10-02T09:20:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0650 closed: Webhook retries after your ERP go-live,"Hello Ms Hoffmann,
+64,MDS-SUP-26-0650,outbound,2026-10-02T09:20:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0650 closed: Webhook retries after your ERP go-live,"Hello Ms Hoffmann,
 
 We have closed ticket MDS-SUP-26-0650 (Webhook retries after your ERP go-live). Your new ERP answered slowly in its first days, so we raised the retry limit of your webhook.
 
 Time booked:
-- 30 Sep, Laia Font: 2.0 h
+- 30 Sep, Laia Font: 3.0 h
 - 1 Oct, Laia Font: 1.5 h
 
 Best regards
 Meridian Data Systems, customer support",
-63,KOL-INV-9000010498,inbound,2026-10-06T08:05:00+02:00,invoices@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice 9000010498,"This is an automatic message from Kolbe Industrietechnik GmbH.
+65,KOL-INV-9000010498,inbound,2026-10-06T08:05:00+02:00,invoices@kolbe-industrietechnik.example,ap@meridian-data.example,Invoice 9000010498,"This is an automatic message from Kolbe Industrietechnik GmbH.
 
 Invoice: 9000010498 of 6 October 2026
 Your order: PO-MDS-2026-0342
@@ -574,14 +592,14 @@ Due date: 5 November 2026
 Bank: Ruhrwald Genossenschaftsbank eG, IBAN DE07 4409 9570 0047 1135 80
 
 Please do not reply to this email.",
-64,MDS-PAYRUN-2026-10-09,outbound,2026-10-09T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 9 October 2026","Dear Ms Wörner,
+66,MDS-PAYRUN-2026-10-09,outbound,2026-10-09T10:01:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,"Payment advice Meridian Data Systems S.L., 9 October 2026","Dear Ms Wörner,
 
 This is an automatic payment advice. Today we transferred EUR 3,200.00, payment reference MDS-PAYRUN-2026-10-09.
 
 RE-2026-0379 of 15 September 2026: EUR 3,200.00
 
 Meridian Data Systems, payables team",
-65,RET-RE-2026-0318,inbound,2026-10-09T14:40:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Return: two gateways from invoice RE-2026-0318,"Hello Ms Soler,
+67,RET-RE-2026-0318,inbound,2026-10-09T14:40:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Return: two gateways from invoice RE-2026-0318,"Hello Ms Soler,
 
 sorry for the delay, our ERP move held it up. We have issued credit note 9000000117 for the two returned gateways (KG-7731, KG-7734): 2 x EUR 1,790.00 = EUR 3,580.00 against RE-2026-0318. You may deduct it from your next payment.
 
@@ -592,7 +610,7 @@ Kolbe Industrietechnik GmbH
 +49 231 000 3157
 Sensorweg 18, 44309 Dortmund
 Sitz Dortmund, Amtsgericht Dortmund HRB 31853, Geschäftsführer: Matthias Kolbe",
-66,MDS-SUP-26-0712,outbound,2026-10-15T16:00:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0712 closed: New dashboard for the KS-8 hubs,"Hello Ms Hoffmann,
+68,MDS-SUP-26-0712,outbound,2026-10-15T16:00:00+02:00,support@meridian-data.example,l.hoffmann@kolbe-industrietechnik.example,Ticket MDS-SUP-26-0712 closed: New dashboard for the KS-8 hubs,"Hello Ms Hoffmann,
 
 We have closed ticket MDS-SUP-26-0712 (New dashboard for the KS-8 hubs). We built the dashboard and gave your team access.
 
@@ -601,7 +619,7 @@ Time booked:
 
 Best regards
 Meridian Data Systems, customer support",
-67,KOL-ERP-2026-09,inbound,2026-10-20T16:10:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Marta,
+69,KOL-ERP-2026-09,inbound,2026-10-20T16:10:00+02:00,s.woerner@kolbe-industrietechnik.example,ap@meridian-data.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Marta,
 
 with the ERP move our bank connection has changed after all. Our Managing Director's signed letter goes to you by courier today. Please pay the two open invoices below in your next payment run, and only to our new bank account:
 
@@ -628,7 +646,7 @@ Kolbe Industrietechnik GmbH
 >
 > we are moving to a new ERP system. From 28 September our invoices have 10-digit numbers starting with 9000. RE- numbers stop on that date. The invoice layout also changes a little.
 > ...",
-68,KOL-ERP-2026-09,outbound,2026-10-22T08:53:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Ms Wörner,
+70,KOL-ERP-2026-09,outbound,2026-10-22T08:53:00+02:00,ap@meridian-data.example,s.woerner@kolbe-industrietechnik.example,Re: Kolbe moves to a new ERP system: new invoice numbers from 28 September,"Dear Ms Wörner,
 
 Mr Kolbe's signed letter arrived yesterday by courier. I then called +49 231 000 3175, the number in the letter, and your finance office confirmed the new bank account. Our bank's name check on the new IBAN, the check every euro transfer now gets, also returned a match for Kolbe Industrietechnik GmbH. We have updated our records and will pay 9000010427 and 9000010571 in our payment run on Friday, 23 October, to Baltrava Payments UAB. As you asked, this includes 9000010571, although it is due only on 12 November.
 

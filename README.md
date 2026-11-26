@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/JakubSmy/kolbe-dataset/actions/workflows/ci.yml/badge.svg)](https://github.com/JakubSmy/kolbe-dataset/actions/workflows/ci.yml)
 
-A synthetic payables and receivables dataset for the Nanzen dataset challenge: one company, Kolbe Industrietechnik GmbH, that is both a supplier and a customer of Meridian. Four problems, eight decoys, an answer key.
+A synthetic payables and receivables dataset for the Nanzen dataset challenge: one company, Kolbe Industrietechnik GmbH, that is both a supplier and a customer of Meridian. Four problems, nine decoys, an answer key.
 
 **The submission is [`KOLBE/`](KOLBE/)**, also attached to the [latest release](../../releases/latest) as `KOLBE.zip`. Start with [`KOLBE/README.md`](KOLBE/README.md).
 

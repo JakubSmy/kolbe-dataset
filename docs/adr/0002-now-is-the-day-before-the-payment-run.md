@@ -8,7 +8,7 @@ Nanzen sets "now" to the latest date in the data. That date decides what is over
 
 ## Decision
 
-The latest row is mail seq 68, sent on Thursday 2026-10-22 at 08:53 +02:00: Meridian's own mail that confirms the fraudulent bank change and says it will pay on Friday 2026-10-23. Meridian pays Kolbe in Friday runs (the `MDS-PAYRUN` references).
+The latest row is mail seq 70, sent on Thursday 2026-10-22 at 08:53 +02:00: Meridian's own mail that confirms the fraudulent bank change and says it will pay on Friday 2026-10-23. Meridian pays Kolbe in Friday runs (the `MDS-PAYRUN` references).
 
 ## Consequences
 

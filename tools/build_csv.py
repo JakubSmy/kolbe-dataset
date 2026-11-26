@@ -103,7 +103,10 @@ inbound = [
         IBAN_KOLBE_NEW,
     ),  # 5 x 1,895.00; two units returned, credited at 1,790.00 instead (p2)
     ("RE-2026-0350", "2026-08-18", "6210.00", "0.00", IBAN_KOLBE_NEW),
-    # PO-MDS-2026-0342: 12 KS-8 hubs at 640.00, shipped 5 + 7: RE-2026-0379 bills the 5, 9000010427 the 7
+    # PO-MDS-2026-0342: 12 KS-8 hubs at 640.00, shipped 5 + 7: RE-2026-0379 bills the 5, 9000010427 the 7.
+    # 9000010412, the first invoice of Kolbe's new ERP, billed the 7 without the PO number: Meridian returned it (FWA 5.2),
+    # Kolbe cancelled it in full with credit note 9000000109 and reissued it as 9000010427 (FWA 5.3 met, decoy s9)
+    ("9000010412", "2026-09-28", "4480.00", "0.00", IBAN_KOLBE_NEW),
     ("9000010427", "2026-09-29", "4480.00", "0.00", IBAN_KOLBE_NEW),
     # PO-MDS-2026-0361 of 10 September: 7 KG-3 at the PO price 1,895.00, right although the list price fell on 1 October (decoy s2)
     ("9000010571", "2026-10-13", "13265.00", "0.00", IBAN_KOLBE_NEW),
@@ -188,7 +191,7 @@ full("MDS-2026-07", "2026-07-28", "KOL-ZA-26-07-28")
 t("MDS-2026-08-P1", "in", "MDS-2026-08", "2026-08-11", "4900.00", "payment", "KOL-ZA-26-08-11")
 t("MDS-2026-08-D1", "in", "MDS-2026-08", "2026-08-11", "100.00", "deduction", "KOL-ZA-26-08-11", method="")
 full("MDS-2026-09", "2026-09-29", "KOL-ZA-26-09-29")
-# MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3); Q3 support (19.0 h) stays within the 20-hour quota (s4)
+# MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3); Q3 support (20.0 h by work date) is exactly the 20-hour quota (s4)
 
 # Meridian pays Kolbe (out), Friday payment runs
 for n, when in [
@@ -227,6 +230,8 @@ for n, issue, amt in ROUTINE:
     t(f"{n}-P1", "out", n, when, amt, "payment", f"MDS-PAYRUN-{when}")
 # RE-2026-0318: two gateways returned; credit note 9000000117 from Kolbe's new ERP at 2 x 1,790.00, not the PO price 1,895.00 (p2)
 t("RE-2026-0318-C1", "out", "RE-2026-0318", "2026-10-09", "3580.00", "credit_note", "9000000117", method="")
+# 9000010412: returned for the missing PO number, cancelled in full by credit note 9000000109 the next day (decoy s9)
+t("9000010412-C1", "out", "9000010412", "2026-09-29", "4480.00", "credit_note", "9000000109", method="")
 # RE-2025-0402: one gateway returned before payment, credit note GS-2025-0047 at the PO price, deducted
 t("RE-2025-0402-C1", "out", "RE-2025-0402", "2025-12-02", "1200.00", "credit_note", "GS-2025-0047", method="")
 t("RE-2025-0402-P1", "out", "RE-2025-0402", "2025-12-12", "8400.00", "payment", "MDS-PAYRUN-2025-12-12")

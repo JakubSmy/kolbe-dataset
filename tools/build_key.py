@@ -107,7 +107,7 @@ def q(lo, hi):
 q1, q2, q3 = (
     sum(x[3] for x in q(lo, hi)) for lo, hi in (("2026-01-01", "2026-03-31"), ("2026-04-01", "2026-06-30"), ("2026-07-01", "2026-09-30"))
 )
-assert (q1, q2, q3) == (D("6"), D("11.5"), D("19")), (q1, q2, q3)
+assert (q1, q2, q3) == (D("6"), D("11.5"), D("20")), (q1, q2, q3)  # Q3 is exactly the 20 included hours
 assert sum(x[4] for x in q("2026-07-01", "2026-09-30")) == q3  # no fault hours booked in Q3
 rate = D("120.00")
 # p4: the delivery of 10 September invoiced twice, under the old and the new number
@@ -116,12 +116,12 @@ s_inv379, s_dup, s_ship342, s_inv427 = (
     seq("KOL-INV-RE-2026-0379"),
     seq("KOL-INV-9000010498"),
     seq("PO-MDS-2026-0342"),
-    seq("KOL-INV-9000010427"),
+    seq("KOL-INV-9000010412", 2),
 )
 assert (
     "LS-2026-1187" in body("KOL-INV-RE-2026-0379")
     and "LS-2026-1187" in body("KOL-INV-9000010498")
-    and "LS-2026-1342" in body("KOL-INV-9000010427")
+    and "LS-2026-1342" in mail[int(s_inv427) - 1]["body"]
 )
 assert (
     a(dup) == a("RE-2026-0379") == 5 * D("640.00")
@@ -132,7 +132,20 @@ assert tx["RE-2026-0379-P1"]["occurred_at"] == "2026-10-09" and amt("RE-2026-037
 assert inv[dup]["due_date"] == "2026-11-05" and not any(t["invoice_number"] == dup for t in tx.values())
 assert a("RE-2026-0379") + a("9000010427") + a(dup) == 17 * D("640.00") and "12 KS-8 sensor hubs" in body("PO-MDS-2026-0342")
 assert tx["RE-2026-0142-P1"]["occurred_at"] == "2026-04-17" and tx["RE-2026-0156-P1"]["occurred_at"] == "2026-04-24"
-assert ((q3 + D("1.5")) - 20) * rate == D("60.00")
+q3_by_close = q3 - D("3.0")  # 0650 closed on 2 October
+wrong_q3 = (q3 + D("1.5") - 20) * rate  # the whole of 0650 counted in Q3: 21.5 hours
+assert (q3 + D("1.5"), wrong_q3, q3_by_close) == (D("21.5"), D("180.00"), D("17.0"))
+# s9: 9000010412 returned for the missing PO number, cancelled in full by credit note 9000000109, reissued as 9000010427
+rei, rei_cn = "9000010412", "9000010412-C1"
+s_rei_in, s_rei_ret, s_rei_new = (seq("KOL-INV-9000010412", i) for i in range(3))
+rei_open = a(rei) - amt(rei_cn)
+assert a(rei) == a("9000010427") == 7 * D("640.00") and rei_open == D("0.00")
+assert tx[rei_cn]["kind"] == "credit_note" and tx[rei_cn]["external_ref"] == "9000000109" and tx[rei_cn]["occurred_at"] == "2026-09-29"
+assert [t_["transaction_id"] for t_ in tx.values() if t_["invoice_number"] == rei] == [rei_cn]
+assert "PO-MDS" not in mail[int(s_rei_in) - 1]["body"] and "LS-2026-1342" in mail[int(s_rei_in) - 1]["body"]
+assert "Section 5.2" in mail[int(s_rei_ret) - 1]["body"]
+assert "We cancelled 9000010412 with credit note 9000000109 and reissued it as 9000010427" in mail[int(s_rei_new) - 1]["body"]
+assert inv[rei]["issue_date"] == "2026-09-28" and d("2026-09-28").weekday() == 0 and inv[rei]["due_date"] == "2026-10-28"
 s_erp_note = seq("KOL-ERP-2026-09")
 assert "Deliveries that we have not invoiced by 25 September are invoiced from the new system" in body("KOL-ERP-2026-09")
 # s3: 25 temporary users in June, between two counts
@@ -311,8 +324,10 @@ S.append(
         description=(
             f"The Q2 2026 work logs add up to {q2_booked:g} hours, above the 20 included in Section 2.3 of MDS-KOL-SUB-2025-001. But 12 of them were "
             f"MDS-SUP-26-0306, 'an error in our database upgrade' (mail seq {seq306}): a Platform fault, which does not count. Q2 is {q2:g} hours. "
-            f"Q1 ({q1:g}) and Q3 ({q3:g}) are also within 20; Q3 counts MDS-SUP-26-0650 only for 30 September (2 hours), its 1.5 hours of 1 October "
-            f"fall in Q4. The agent must not bill {eur(wrong_s4)}, or EUR 60.00 for Q3 (the whole of 0650 counted in Q3)."
+            f"Q1 ({q1:g}) is also within 20. Q3 is exactly {q3:g} hours by work date (Section 2.3: up to 20 included; time counts in the quarter "
+            "the work is done): 0458 4 + 0487 2.5 + 0512 3 + 0566 1.5 + 0601 3 + 0634 3 + 0650 3 (30 September) = 20.0. The SPF ticket 0566 counts "
+            "(the cause was on Kolbe's side, not a Platform fault); the 1.5 hours of 0650 on 1 October fall in Q4. "
+            f"The agent must not bill {eur(wrong_s4)} for Q2, or {eur(wrong_q3)} for Q3 (1.5 x 120.00, the whole of 0650 counted in Q3)."
         ),
     )
 )
@@ -363,6 +378,22 @@ S.append(
             "MDS-2026-04 (EUR 5,000.00) is due 2026-05-01 and was paid on 2026-05-04 (MDS-2026-04-P1), which looks three days late. 2026-05-01 is "
             "Labour Day, a public holiday in Barcelona, followed by a weekend; Section 4.2 of MDS-KOL-SUB-2025-001 makes a payment on the next "
             "business day, Monday 2026-05-04, on time. The agent must not claim interest or the EUR 40.00 of Section 4.6."
+        ),
+    )
+)
+
+S.append(
+    dict(
+        id="s9_reissued_invoice_cancelled_by_credit_note",
+        polarity="absent",
+        category="hallucination",
+        description=(
+            f"9000010412 (2026-09-28, {eur(a(rei))}) and 9000010427 (2026-09-29, {eur(a('9000010427'))}) bill the same 7 KS-8 hubs, delivery note "
+            f"LS-2026-1342 (mail seq {s_rei_in} and {s_rei_new}). 9000010412 had no PO number; Meridian returned it under Section 5.2 of "
+            f"KOL-MDS-FWA-2025-001-A1 (mail seq {s_rei_ret}). Kolbe cancelled it in full with credit note 9000000109 ({rei_cn}, 2026-09-29) and "
+            f"reissued it as 9000010427 (mail seq {s_rei_new}). Section 5.3 is met: {eur(a(rei))} - {eur(amt(rei_cn))} = EUR {rei_open:,.2f} open "
+            "on 9000010412, and 9000010427 is owed once. Unlike p4, where 9000010498 has no credit note. The agent must not call 9000010427 a "
+            "duplicate or hold it as one (it is held only because of p1)."
         ),
     )
 )

@@ -181,15 +181,44 @@ mails = [
         "Hello Ms Soler,\n\ntoday we ship 5 of the 12 KS-8 sensor hubs (EUR 640.00 each) on your order PO-MDS-2026-0342 of 26 August, "
         "delivery note LS-2026-1187. The other 7 follow in week 40, as confirmed.\n\nKind regards,\n" + SIG_BRANDT,
     ),
+    # decoy s9: the first invoice of the new ERP has no PO number; returned (FWA 5.2), cancelled by a full credit note and reissued (FWA 5.3)
     (
-        "KOL-INV-9000010427",
+        "KOL-INV-9000010412",
+        "inbound",
+        "2026-09-28T08:05:00+02:00",
+        "invoices@kolbe-industrietechnik.example",
+        AP,
+        "Invoice 9000010412",
+        "This is an automatic message from Kolbe Industrietechnik GmbH.\n\n"
+        "Invoice: 9000010412 of 28 September 2026\n"
+        "Delivery note: LS-2026-1342 of 28 September 2026\n"
+        "7 KS-8 sensor hubs at EUR 640.00: EUR 4,480.00\n"
+        "Due date: 28 October 2026\n"
+        "Bank: Ruhrwald Genossenschaftsbank eG, IBAN DE07 4409 9570 0047 1135 80\n\n"
+        "Please do not reply to this email.",
+    ),
+    (
+        "KOL-INV-9000010412",
+        "outbound",
+        "2026-09-28T13:40:00+02:00",
+        AP,
+        WOERNER,
+        "Invoice 9000010412 returned: no PO number",
+        "Hello Ms Wörner,\n\n"
+        "Your invoice 9000010412 of today (EUR 4,480.00) shows no PO number, so we return it under Section 5.2 of our framework agreement. "
+        "Please send us a corrected invoice.\n\n"
+        "Kind regards,\n" + SIG_MARTA,
+    ),
+    (
+        "KOL-INV-9000010412",
         "inbound",
         "2026-09-29T11:05:00+02:00",
         WOERNER,
         AP,
-        "Invoice 9000010427 from our new system",
-        "Dear Ms Soler,\n\nwe have sent you our first invoice to Meridian from the new system: 9000010427, "
-        "for the other 7 KS-8 sensor hubs of PO-MDS-2026-0342 (delivery note LS-2026-1342 of 28 September): 7 x EUR 640.00 = EUR 4,480.00. Please tell me if the new layout causes any problems on your side.\n\n"
+        "Re: Invoice 9000010412 returned: no PO number",
+        "Dear Ms Soler,\n\nsorry, that was our first invoice from the new system. We cancelled 9000010412 with credit note 9000000109 "
+        "and reissued it as 9000010427 with your PO number: the other 7 KS-8 sensor hubs of PO-MDS-2026-0342 (delivery note LS-2026-1342 "
+        "of 28 September), 7 x EUR 640.00 = EUR 4,480.00. Please tell me if the new layout causes any problems on your side.\n\n"
         "Viele Grüße\n" + SIG_WOERNER,
     ),
     # p4: the delivery of 10 September is invoiced twice: RE-2026-0379 (old system) and 9000010498 (new system)
@@ -511,7 +540,7 @@ TICKETS = [
         "2026-10-02T09:20:00+02:00",
         "Webhook retries after your ERP go-live",
         "Your new ERP answered slowly in its first days, so we raised the retry limit of your webhook.",
-        [("30 Sep", "Laia Font", "2.0"), ("1 Oct", "Laia Font", "1.5")],
+        [("30 Sep", "Laia Font", "3.0"), ("1 Oct", "Laia Font", "1.5")],
     ),
     (
         "0712",

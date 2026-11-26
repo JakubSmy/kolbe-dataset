@@ -16,4 +16,4 @@ The brief allows facts only: no status, no balance, and transactions are never e
 ## Consequences
 
 - The ledger alone cannot tell a valid deduction from an invalid one. The agent has to read the contract and the mail.
-- `validate.py` gives five warnings, and all are planted: the overpayment (p2), the late-looking payment (s8), the set-off in both directions (s6) a warning about two IBANs on Kolbe's invoices (s1) and one about four IBANs in the data (s1, p1). It lists the pairs of equal invoices (s7, p4) as information.
+- `validate.py` gives six warnings, and all are planted: the overpayment (p2), the late-looking payment (s8), the set-off in both directions (s6), two invoices of 4,480.00 in one month (s9), a warning about two IBANs on Kolbe's invoices (s1) and one about four IBANs in the data (s1, p1). It lists the pairs of equal invoices (s7, p4) as information.

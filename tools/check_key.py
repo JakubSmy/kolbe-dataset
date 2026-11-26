@@ -61,7 +61,7 @@ for p in key:
         if n not in inv and not any(x["external_ref"] == n for x in tx.values()):
             bad(pid, f"invoice {n} not in invoices.csv")
     # transaction ids
-    for x in set(re.findall(r"\b(?:(?:MDS-\d{4}-\d{2}|RE-\d{4}-\d{4})-[PDIC]\d|BNK-\d{4}-\d{2}-\d{2}-\d{2})\b", t)):
+    for x in set(re.findall(r"\b(?:(?:MDS-\d{4}-\d{2}|RE-\d{4}-\d{4}|9000\d{6})-[PDIC]\d|BNK-\d{4}-\d{2}-\d{2}-\d{2})\b", t)):
         n_checked += 1
         if x not in tx:
             bad(pid, f"transaction {x} not in transactions.csv")
@@ -162,7 +162,7 @@ DERIVED = {
     and body_m("MDS-SUP-26-0628")["sent_at"].startswith("2026-09-15")
     and (262 - 250) * D("25") + (257 - 250) * D("25") == D("475")
     and A("MDS-2026-09") == A("MDS-2026-10") == D("5000.00"),
-    "support hours: Q1 2.5 + 3.5 = 6; Q3 0458 4 + 0487 2.5 + 0512 3 + 0566 1.5 + 0601 3 + 0634 3 + 0650 2 (30 Sep) = 19 h, within 20; 0539 books no time": "**20 hours**"
+    "support hours: Q1 2.5 + 3.5 = 6; Q3 0458 4 + 0487 2.5 + 0512 3 + 0566 1.5 + 0601 3 + 0634 3 + 0650 3 (30 Sep) = 20 h, exactly the 20 included; whole 0650 in Q3 = 21.5 h, 1.5 x 120.00 = 180.00 would be wrong; 0539 books no time": "**20 hours**"
     in SUB
     and "**EUR 120.00 per hour**" in SUB
     and "The time of every engineer counts." in SUB
@@ -174,9 +174,12 @@ DERIVED = {
     and log("MDS-SUP-26-0566") == [("18 Aug", 1.5)]
     and log("MDS-SUP-26-0601") == [("1 Sep", 3.0)]
     and log("MDS-SUP-26-0634") == [("16 Sep", 3.0)]
-    and log("MDS-SUP-26-0650") == [("30 Sep", 2.0), ("1 Oct", 1.5)]
+    and log("MDS-SUP-26-0650") == [("30 Sep", 3.0), ("1 Oct", 1.5)]
     and log("MDS-SUP-26-0539") == []
-    and 4 + 2.5 + 3 + 1.5 + 3 + 3 + 2 == 19,
+    and "up to **20 hours**" in SUB
+    and "Hours above 20 in a quarter cost" in SUB
+    and 4 + 2.5 + 3 + 1.5 + 3 + 3 + 3 == 20
+    and (21.5 - 20) * 120 == 180,
     "p4 9000010498 = RE-2026-0379 = 5 x 640.00, same delivery note LS-2026-1187; PO-0342 is 12 hubs = 5 + 7; RE-2026-0379 paid 2026-10-09; 9000010498 unpaid, due 2026-11-05": A(
         "9000010498"
     )
@@ -242,6 +245,26 @@ DERIVED = {
     and A("RE-2026-0244") == A("RE-2026-0270") == 10 * D("410.00")
     and A("RE-2026-0324") == 12 * D("410.00")
     and "call-offs of 10, 10 and 12" in body("PO-MDS-2026-0215"),
+    "s9 9000010412 = 9000010427 = 7 x 640.00, same delivery note LS-2026-1342; 9000010412 has no PO number, returned under 5.2, cancelled in full by credit note 9000000109 on 2026-09-29: 4,480.00 - 4,480.00 = 0.00 open; 5.3 met": A(
+        "9000010412"
+    )
+    == A("9000010427")
+    == 7 * D("640.00")
+    and inv["9000010412"]["issue_date"] == "2026-09-28"
+    and inv["9000010412"]["due_date"] == "2026-10-28"
+    and DD("2026-09-28").weekday() == 0
+    and [t["transaction_id"] for t in tx.values() if t["invoice_number"] == "9000010412"] == ["9000010412-C1"]
+    and tx["9000010412-C1"]["kind"] == "credit_note"
+    and tx["9000010412-C1"]["external_ref"] == "9000000109"
+    and tx["9000010412-C1"]["occurred_at"] == "2026-09-29"
+    and A("9000010412") - TX("9000010412-C1") == D("0.00")
+    and "LS-2026-1342" in body("KOL-INV-9000010412")
+    and "PO-MDS" not in [m for m in mail.values() if m["thread"] == "KOL-INV-9000010412"][0]["body"]
+    and "under Section 5.2 of our framework agreement" in body("KOL-INV-9000010412")
+    and "We cancelled 9000010412 with credit note 9000000109 and reissued it as 9000010427 with your PO number"
+    in body("KOL-INV-9000010412")
+    and "5.2 Every invoice must show the Buyer's PO number." in A1
+    and "only together with a credit note that cancels the original invoice in full" in A1,
     "clean RE-2025-0402: 1,200.00 + 8,400.00 = 9,600.00": TX("RE-2025-0402-C1") + TX("RE-2025-0402-P1") == A("RE-2025-0402"),
     "clean: every other invoice settled in full by its due date": all(
         sum(D(t["amount"]) for t in tx.values() if t["invoice_number"] == n and t["kind"] in ("payment", "deduction", "credit_note"))
