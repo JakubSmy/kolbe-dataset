@@ -75,7 +75,7 @@ for ym in months:
             iban=IBAN_MERIDIAN,
         )
     )
-# inbound: Kolbe hardware and services, Net 30, intra-EU supply (no VAT) except one
+# inbound: Kolbe hardware, Net 30, intra-EU supply (no VAT)
 inbound = [
     ("RE-2025-0311", "2025-10-14", "14315.00", "0.00", IBAN_KOLBE_OLD),
     (
@@ -188,7 +188,7 @@ full("MDS-2026-07", "2026-07-28", "KOL-ZA-26-07-28")
 t("MDS-2026-08-P1", "in", "MDS-2026-08", "2026-08-11", "4900.00", "payment", "KOL-ZA-26-08-11")
 t("MDS-2026-08-D1", "in", "MDS-2026-08", "2026-08-11", "100.00", "deduction", "KOL-ZA-26-08-11", method="")
 full("MDS-2026-09", "2026-09-29", "KOL-ZA-26-09-29")
-# MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3), nor the 4 support hours above the Q3 quota (p4)
+# MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3); Q3 support (19.0 h) stays within the 20-hour quota (s4)
 
 # Meridian pays Kolbe (out), Friday payment runs
 for n, when in [

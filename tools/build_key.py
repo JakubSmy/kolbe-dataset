@@ -229,7 +229,7 @@ P.append(
             f"(mail seq {s_ret[0]} and {s_ret[1]}). Section 6.3 of KOL-MDS-FWA-2025-001-A1: credit at the PO price within 14 days. Credit note "
             f"9000000117 (RE-2026-0318-C1, mail seq {s_ret[2]}) came {late} days late, at Kolbe's new list price: 2 x {eur(unit_cn)} = {eur(cn)}. "
             f"Right: 2 x {eur(unit_po)} = {eur(owed)}, so {eur(short)} short. The {eur(cn)} overpaid on RE-2026-0318 is this credit. Right move: "
-            f"deduct {eur(cn)} from the next payment ({eur(pay_net)} on 9000010427) or ask for a refund, and claim {eur(short)} in writing. "
+            f"deduct {eur(cn)} from the next payment ({eur(pay_net)} on 9000010427) or ask for a refund, and claim {eur(short)} in writing (or ask for a credit note of {eur(owed)} in place of 9000000117). "
             f"Missed: accepting {eur(cn)}, or deducting the {eur(short)} before Kolbe agrees (Section 8), for example paying EUR 690.00."
         ),
     )
@@ -243,7 +243,7 @@ P.append(
             "Section 2.2 of MDS-KOL-SUB-2025-001: 250 named users included, EUR 25.00 a month for each user above, counted on the first day of the "
             f"month; users missing from that invoice go on a separate invoice. 262 users on 2026-09-01 (mail seq {s_add}) and {u_del} on 2026-10-01 "
             f"(mail seq {s_del}): {sep_x} x 25.00 + {oct_x} x 25.00 = {eur(due3)}. MDS-2026-09 and MDS-2026-10 bill only the fee. Right move: invoice "
-            f"{eur(due3)} separately, as Section 2.2 says, and bill the users above 250 counted on 2026-11-01 with that invoice. Missed: 600.00 or 350.00, any "
+            f"{eur(due3)} separately, as Section 2.2 says, and bill the users above 250 counted on 2026-11-01 with the November invoice. Missed: 600.00 or 350.00, any "
             "charge for August, or no recommendation to bill."
         ),
     )
@@ -273,7 +273,7 @@ S.append(
         category="hallucination",
         description=(
             f"Kolbe invoices up to RE-2026-0156 carry DE04440944400047113580; from RE-2026-0174 they carry {DE07}. The change followed a bank merger "
-            f"and Section 7.2 of KOL-MDS-FWA-2025-001-A1: the Managing Director's signed letter and Meridian's call to +49 231 000 3141 (mail seq "
+            f"and Section 7.2 of KOL-MDS-FWA-2025-001 (restated in KOL-MDS-FWA-2025-001-A1): the Managing Director's signed letter and Meridian's call to +49 231 000 3141 (mail seq "
             f"{seq('KOL-BANK-2026-03')} and {seq('KOL-BANK-2026-03', 1)}). RE-2026-0142 and RE-2026-0156, issued in March with the old IBAN, were paid on "
             "2026-04-17 and 2026-04-24, which Section 7.1a allows until 2026-09-30. The agent must not call it a mismatch or fraud."
         ),

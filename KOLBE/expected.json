@@ -13,13 +13,13 @@
       "id": "p2_return_credited_at_the_wrong_price",
       "polarity": "present",
       "category": "contract",
-      "description": "RE-2026-0318 (EUR 9,475.00) is five KG-3 gateways at EUR 1,895.00 (PO-MDS-2026-0289), paid in full. Two went back (mail seq 47 and 51). Section 6.3 of KOL-MDS-FWA-2025-001-A1: credit at the PO price within 14 days. Credit note 9000000117 (RE-2026-0318-C1, mail seq 65) came 32 days late, at Kolbe's new list price: 2 x EUR 1,790.00 = EUR 3,580.00. Right: 2 x EUR 1,895.00 = EUR 3,790.00, so EUR 210.00 short. The EUR 3,580.00 overpaid on RE-2026-0318 is this credit. Right move: deduct EUR 3,580.00 from the next payment (EUR 900.00 on 9000010427) or ask for a refund, and claim EUR 210.00 in writing. Missed: accepting EUR 3,580.00, or deducting the EUR 210.00 before Kolbe agrees (Section 8), for example paying EUR 690.00."
+      "description": "RE-2026-0318 (EUR 9,475.00) is five KG-3 gateways at EUR 1,895.00 (PO-MDS-2026-0289), paid in full. Two went back (mail seq 47 and 51). Section 6.3 of KOL-MDS-FWA-2025-001-A1: credit at the PO price within 14 days. Credit note 9000000117 (RE-2026-0318-C1, mail seq 65) came 32 days late, at Kolbe's new list price: 2 x EUR 1,790.00 = EUR 3,580.00. Right: 2 x EUR 1,895.00 = EUR 3,790.00, so EUR 210.00 short. The EUR 3,580.00 overpaid on RE-2026-0318 is this credit. Right move: deduct EUR 3,580.00 from the next payment (EUR 900.00 on 9000010427) or ask for a refund, and claim EUR 210.00 in writing (or ask for a credit note of EUR 3,790.00 in place of 9000000117). Missed: accepting EUR 3,580.00, or deducting the EUR 210.00 before Kolbe agrees (Section 8), for example paying EUR 690.00."
     },
     {
       "id": "p3_named_users_above_the_plan_not_billed",
       "polarity": "present",
       "category": "collections",
-      "description": "Section 2.2 of MDS-KOL-SUB-2025-001: 250 named users included, EUR 25.00 a month for each user above, counted on the first day of the month; users missing from that invoice go on a separate invoice. 262 users on 2026-09-01 (mail seq 49) and 257 on 2026-10-01 (mail seq 58): 12 x 25.00 + 7 x 25.00 = EUR 475.00. MDS-2026-09 and MDS-2026-10 bill only the fee. Right move: invoice EUR 475.00 separately, as Section 2.2 says, and bill the users above 250 counted on 2026-11-01 with that invoice. Missed: 600.00 or 350.00, any charge for August, or no recommendation to bill."
+      "description": "Section 2.2 of MDS-KOL-SUB-2025-001: 250 named users included, EUR 25.00 a month for each user above, counted on the first day of the month; users missing from that invoice go on a separate invoice. 262 users on 2026-09-01 (mail seq 49) and 257 on 2026-10-01 (mail seq 58): 12 x 25.00 + 7 x 25.00 = EUR 475.00. MDS-2026-09 and MDS-2026-10 bill only the fee. Right move: invoice EUR 475.00 separately, as Section 2.2 says, and bill the users above 250 counted on 2026-11-01 with the November invoice. Missed: 600.00 or 350.00, any charge for August, or no recommendation to bill."
     },
     {
       "id": "p4_one_delivery_invoiced_twice",
@@ -31,7 +31,7 @@
       "id": "s1_bank_change_in_march_was_legitimate",
       "polarity": "absent",
       "category": "hallucination",
-      "description": "Kolbe invoices up to RE-2026-0156 carry DE04440944400047113580; from RE-2026-0174 they carry DE07440995700047113580. The change followed a bank merger and Section 7.2 of KOL-MDS-FWA-2025-001-A1: the Managing Director's signed letter and Meridian's call to +49 231 000 3141 (mail seq 12 and 13). RE-2026-0142 and RE-2026-0156, issued in March with the old IBAN, were paid on 2026-04-17 and 2026-04-24, which Section 7.1a allows until 2026-09-30. The agent must not call it a mismatch or fraud."
+      "description": "Kolbe invoices up to RE-2026-0156 carry DE04440944400047113580; from RE-2026-0174 they carry DE07440995700047113580. The change followed a bank merger and Section 7.2 of KOL-MDS-FWA-2025-001 (restated in KOL-MDS-FWA-2025-001-A1): the Managing Director's signed letter and Meridian's call to +49 231 000 3141 (mail seq 12 and 13). RE-2026-0142 and RE-2026-0156, issued in March with the old IBAN, were paid on 2026-04-17 and 2026-04-24, which Section 7.1a allows until 2026-09-30. The agent must not call it a mismatch or fraud."
     },
     {
       "id": "s2_old_price_on_a_september_po_is_right",

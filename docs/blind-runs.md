@@ -8,7 +8,7 @@ Six runs on these four problems: Haiku 3, Sonnet 2, Opus 1. All six found all fo
 
 Every run stopped the payment to the Lithuanian IBAN and named the Section 11 number, found the second invoice for delivery note LS-2026-1187, deducted only the issued credit note and billed 475.00 on a separate invoice. Every run explained the June set-off (s6) and the 1 May holiday (s8).
 
-## What the runs changed in the data
+## What earlier runs changed in the data
 
 | What a run did | What I changed |
 |---|---|

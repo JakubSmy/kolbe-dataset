@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent validator for a "Nanzen dataset challenge" dataset folder.
+"""Validator for a "Nanzen dataset challenge" dataset folder, separate from the generators.
 
 Usage:  python3 -I validate.py <dataset_folder>
 

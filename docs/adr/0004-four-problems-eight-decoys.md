@@ -1,4 +1,4 @@
-# 0004. Four problems from real practice, eight realistic decoys
+# 0004. Four problems, eight decoys
 
 Status: accepted.
 
@@ -8,7 +8,7 @@ The aim: problems that happen in real books, each clear to a person in one sente
 
 ## What I tried
 
-Blind runs with ten candidate hard cases ([docs/blind-runs.md](../blind-runs.md)). At about 40 invoices a model reads every row, so the hard part is rarely finding a case. It is applying the right rule: which users count, which hours count, which amount may be deducted.
+Blind runs on earlier candidate cases; the runs on the final set are in [docs/blind-runs.md](../blind-runs.md). At about 40 invoices a model reads every row, so the hard part is rarely finding a case. It is applying the right rule: which users count, which hours count, which amount may be deducted.
 
 ## Decision
 

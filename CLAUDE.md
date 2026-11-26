@@ -19,10 +19,10 @@ make lint      # ruff check and format check on tools/
 make zip       # build dist/KOLBE.zip
 ```
 
-`make check` and `make lint` must pass before a pull request. CI runs both on every push.
+`make check` and `make lint` must pass before a commit to main. CI runs both on every push to main and every pull request.
 
 ## Changes
 
-- One branch and one pull request per change: what changed, why, which checks passed.
+- Commit messages say what changed and which checks passed.
 - A design decision gets a short ADR in `docs/adr/` (context, decision, consequences).
 - After a change to a case, run blind runs: agents that see only the data, contracts and mail. Record the result in `docs/blind-runs.md`.
