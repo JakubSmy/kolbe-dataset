@@ -9,64 +9,46 @@ Kolbe (Dortmund) makes IoT gateways. It is on both sides:
 
 ## The data
 
-| File | Rows | Content |
-|---|---|---|
-| company.csv | 1 | Kolbe |
-| invoices.csv | 40 | 13 platform, 27 hardware |
-| transactions.csv | 40 | 34 payments, 3 credit notes, 3 deductions |
-| contracts.csv | 2 | Both agreements |
-| documents/ | 2 | The agreement texts |
-| mail.csv | 70 | Orders, invoices, returns, payment advices, support tickets |
-
+- **Rows:** company 1; invoices 40 (13 platform, 27 hardware); transactions 40 (34 payments, 3 credit notes, 3 deductions); contracts 2, each with its text in documents/; mail 70.
 - **Time span:** 22 September 2025 to 22 October 2026.
-- **"Now":** Thursday 2026-10-22, the date of mail 70. Meridian pays on Fridays, so the next payment is tomorrow.
-- **Money:** EUR, Net 30. No VAT: EU goods delivery (framework 4.1) and reverse charge (platform 3.2).
-- **IBANs:**
-  - Kolbe old, DE04440944400047113580: framework 7.1, mail 12, invoices up to RE-2026-0156, payment advices up to April.
-  - Kolbe new, DE07440995700047113580: mails 12, 13, 57, 61, 65, invoices from RE-2026-0174, payment advices from May.
-  - Meridian, ES4399173305310002184466: platform 5.1, platform invoices.
-  - Fraud, LT733999000012847561: mail 69 only.
+- **"Now":** Thursday 2026-10-22 (mail 70).
+- **Money:** EUR, Net 30, no VAT (EU delivery, framework 4.1; reverse charge, platform 3.2).
+- **IBANs:** Kolbe old DE04440944400047113580 (framework 7.1, mail 12, invoices to RE-2026-0156, payment advices to April). Kolbe new DE07440995700047113580 (mails 12, 13, 57, 61, 65, invoices from RE-2026-0174, payment advices from May). Meridian ES4399173305310002184466 (platform 5.1, platform invoices). Fraud LT733999000012847561 (mail 69 only).
 
 ## The problems
 
-**p1. Bank change confirmed on the fraudster's number** (`cross_source`, a person decides). EUR 17,745.00.
-Mail 69 comes from Sabine Wörner's real mailbox, but a fraudster wrote it. It asks Meridian to pay 9000010427 (4,480.00) and 9000010571 (13,265.00) to a Lithuanian IBAN and to confirm on +49 231 000 3175. Her real number ends 3157. In mail 70, Meridian called 3175, the bank's name check matched, and the payment goes out tomorrow.
-Rule: framework 7.2: confirm only by calling the Section 11 number, +49 231 000 3141. 7.3: only payment to DE07440995700047113580 pays the debt.
-Next step: stop the payment. Call 3141. Set the IBAN back to DE07440995700047113580 and warn Kolbe. Pay 9000010427 only to the new IBAN: 900.00 if the p2 credit is deducted, 4,480.00 if Kolbe refunds it.
+**p1. Fraudulent bank change** (`cross_source`, a person decides). EUR 17,745.00.
+Mail 69, from Sabine Wörner's hijacked mailbox, asks Meridian to pay 9000010427 (4,480.00) and 9000010571 (13,265.00) to a Lithuanian IBAN and to confirm on +49 231 000 3175 (her real number ends 3157). A forged signed letter followed; Meridian called 3175 from it, the bank name check matched, and the payment goes out tomorrow (mail 70). Framework 7.2 allows confirmation only via the Section 11 number, 3141; 7.3: only payment to the new IBAN pays the debt.
+Next step: stop the payment, call 3141, set the IBAN back to DE07440995700047113580, warn Kolbe. Pay 9000010427 there: 900.00 if the p2 credit is deducted, else 4,480.00.
 
 **p2. Credit note at the wrong price** (`contract`). EUR 210.00.
-Meridian returned 2 gateways from RE-2026-0318 (mails 47, 51). Kolbe's late credit note uses the new list price: 2 × 1,790.00 = 3,580.00 (mail 67). RE-2026-0318 was paid in full, so it shows -3,580.00. That balance is part of p2.
-Rule: framework 6.3: the order price applies, 2 × 1,895.00 = 3,790.00.
-Next step: deduct 3,580.00 from 9000010427 (mail 67 allows it) or ask for a refund. Claim the missing 210.00 in writing. Do not deduct it before Kolbe agrees (framework 8).
+For 2 gateways returned from RE-2026-0318 (mails 47, 51), Kolbe's credit note 9000000117 comes 32 days late at the new price, 2 × 1,790.00 = 3,580.00 (mail 67). Framework 6.3: the order price applies, 2 × 1,895.00 = 3,790.00. RE-2026-0318's balance of -3,580.00 is part of this finding.
+Next step: deduct 3,580.00 from 9000010427 (mail 67 allows it) or ask for a refund; claim 210.00 in writing, no set-off without agreement (framework 8).
 
 **p3. Extra users not invoiced** (`collections`). EUR 475.00.
-Kolbe had 262 users on 1 September and 257 on 1 October (mails 49, 58). MDS-2026-09 and MDS-2026-10 charge only the fee.
-Rule: platform 2.2: 25.00 a month per user above 250, counted on the 1st. 12 × 25.00 + 7 × 25.00 = 475.00.
-Next step: invoice Kolbe 475.00.
+262 users on 1 September, 257 on 1 October (mails 49, 58); MDS-2026-09 and -10 bill only the fee. Platform 2.2: 25.00 a month per user above 250: 12 × 25 + 7 × 25 = 475.00.
+Next step: invoice 475.00.
 
 **p4. One delivery invoiced twice** (`payables`). EUR 3,200.00.
-After its new invoicing system (mail 57), Kolbe sent 9000010498 for delivery note LS-2026-1187 (mail 65). RE-2026-0379 already charged it (mail 59), paid on 9 October. The order has 12 hubs: 5 on RE-2026-0379, 7 on 9000010427 (mail 63).
-Rule: framework 5.1: one invoice per delivery; 5.3: the amount is owed only once.
-Next step: do not pay 9000010498. Dispute it in writing before the due date, 5 November (framework 5.5), and ask for a credit note.
+After its ERP move (mail 57), Kolbe invoiced delivery note LS-2026-1187 again as 9000010498 (mail 65). RE-2026-0379 already billed it (mail 59, paid 9 October). Framework 5.1: one invoice per delivery; 5.3: owed once.
+Next step: do not pay; dispute in writing before the due date, 5 November (framework 5.5), and ask for a credit note.
 
 ## The decoys
 
-- **s1.** New IBAN from 1 April with no amendment. Correct: framework 7.2 needs only a signed letter and a call to 3141, and both happened (mails 12, 13). The March invoices were paid to the old IBAN (mails 18, 20); the bank forwards these until 30 September.
-- **s2.** 9000010571 uses the old price, 1,895.00. Correct: the new prices are for orders from 1 October (mail 57); this order is from 10 September (mail 56). Not 735.00 too much.
-- **s3.** 257 users in June. Correct: only 3 to 26 June (mails 29, 36); 232 on 1 June and 1 July. Not 175.00 due.
-- **s4.** Q2 support hours are 23.5. Correct: 12 hours were a Meridian platform fault (mail 22) and do not count (platform 2.3), so Q2 is 11.5. Not 420.00 due. Q3 is 17.0; ticket MDS-SUP-26-0650 (mail 64) books its 4.5 hours on 1 October, in Q4.
-- **s5.** Kolbe paid only 4,900.00 on MDS-2026-08. Correct: 2% discount, paid on day 10 (platform 4.5; 11 August; mail 45).
-- **s6.** Kolbe paid only 900.00 on MDS-2026-06, and Meridian never paid RE-2026-0270. Correct: both agreed in writing to offset 4,100.00 (mails 33 to 35).
-- **s7.** Two invoices of 1,560.00 and two of 4,100.00. Correct: part deliveries of one order each (mails 19, 21).
-- **s8.** MDS-2026-04 paid three days late. Correct: 1 May is a Barcelona holiday, then a weekend; platform 4.2 allows the next work day.
-- **s9.** Two invoices of 4,480.00 for the same 7 hubs (LS-2026-1342), like p4. Correct: 9000010412 had no PO number, Meridian returned it (mails 61, 62; framework 5.2), Kolbe cancelled it with credit note 9000000109 and reissued it as 9000010427 (mail 63). 0.00 open.
+- **s1.** New IBAN without amendment: framework 7.2 needs only a letter and a call to 3141, both done (mails 12, 13).
+- **s2.** 9000010571 at the old price 1,895.00: the order is from 10 September, the new prices start 1 October (mails 56, 57). Not 735.00.
+- **s3.** 257 users in June: only 3 to 26 June; 232 on 1 June and 1 July (mails 29, 36). Not 175.00.
+- **s4.** Q2 support 23.5 hours: 12 were a Meridian fault (mail 22, platform 2.3), so 11.5. Not 420.00. Q3: 17.0 (mail 64's 4.5 hours fall in Q4).
+- **s5.** MDS-2026-08 paid 4,900.00: 2% discount within 10 days (platform 4.5, mail 45).
+- **s6.** MDS-2026-06 paid 900.00, RE-2026-0270 unpaid: agreed offset of 4,100.00 (mails 33 to 35).
+- **s7.** Two 1,560.00 and two 4,100.00 invoices: part deliveries (mails 19, 21).
+- **s8.** MDS-2026-04 paid 3 days late: 1 May holiday plus weekend (platform 4.2).
+- **s9.** Two 4,480.00 invoices for the same hubs: 9000010412 lacked a PO number, was cancelled by credit note 9000000109 and reissued as 9000010427 (mails 61 to 63, framework 5.2, 5.3).
 
 ## Clean on purpose
 
-- All other invoices are paid in full and on time. RE-2025-0402: 8,400.00 paid plus a 1,200.00 credit note (mails 3, 4).
-- Open on "now", none overdue: 9000010427 (due 29 October), MDS-2026-10 (31 October), 9000010498 (p4), 9000010571 (12 November).
-- The discount and the offset are `deduction` rows with their own `external_ref`. A shared `external_ref` means one transfer.
+Apart from the cases above, all invoices are paid in full and on time. Four are open on "now", none overdue. Discount and offset rows have their own `external_ref`.
 
 ## How I made it
 
-I chose the problems and decoys. Claude Code wrote the scripts, agreements and mails from my choices. A script checks every ID and amount. By hand I checked each case against its contract section, the weekday of every date named, and that nothing is overdue on 22 October. p2 comes from my own reselling business: a refund lower than agreed.
+I chose the problems and decoys; Claude Code wrote the scripts, agreements and mails. A script checks every ID and amount, and I checked each case by hand. p2 comes from my own reselling business: a refund lower than agreed.
