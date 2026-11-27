@@ -192,7 +192,7 @@ full("MDS-2026-07", "2026-07-28", "KOL-ZA-26-07-28")
 t("MDS-2026-08-P1", "in", "MDS-2026-08", "2026-08-11", "4900.00", "payment", "KOL-ZA-26-08-11")
 t("MDS-2026-08-D1", "in", "MDS-2026-08", "2026-08-11", "100.00", "deduction", "DISCOUNT-MDS-2026-08", method="")
 full("MDS-2026-09", "2026-09-29", "KOL-ZA-26-09-29")
-# MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3); Q3 support (20.0 h by work date) is exactly the 20-hour quota (s4)
+# MDS-2026-09 and MDS-2026-10 bill only the fee: the named users above 250 are not billed (p3); Q3 support (17.0 h by work date) stays within the 20-hour quota (s4)
 
 # Meridian pays Kolbe (out), Friday payment runs
 for n, when in [

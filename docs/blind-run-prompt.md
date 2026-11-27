@@ -13,4 +13,4 @@ Task: review everything as of "now", as an experienced accounts payable and rece
 You may run code to compute; put scratch files only under /tmp. Do not modify any file in the folder. Your final message is the report only.
 ```
 
-I mark each report against `expected.json`: a problem counts as found only with the right amount and the right next step; a decoy counts as raised when the report lists it as a problem.
+Each report is marked against `expected.json`: a problem counts as found only with the right amount and the right next step; a decoy counts as raised when the report lists it as a problem.

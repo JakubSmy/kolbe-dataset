@@ -22,7 +22,7 @@ Mail 69, from Sabine Wörner's hijacked mailbox, asks Meridian to pay 9000010427
 Next step: stop the payment, call 3141, set the IBAN back, warn Kolbe. Pay 9000010427 there: 900.00 if the p2 credit is deducted, else 4,480.00.
 
 **p2. Credit note at the wrong price** (`contract`). EUR 210.00.
-For 2 gateways returned from RE-2026-0318 (mails 47, 51), Kolbe's credit note 9000000117 comes 32 days late at the new price, 2 × 1,790.00 = 3,580.00 (mail 67). Framework 6.3: the order price applies, 2 × 1,895.00 = 3,790.00. RE-2026-0318's balance of -3,580.00 is part of this finding.
+For 2 gateways returned from RE-2026-0318 (mails 47, 51), Kolbe's credit note 9000000117 comes 32 days after the 14-day deadline and uses the new price, 2 × 1,790.00 = 3,580.00 (mail 67). Framework 6.3: the order price applies, 2 × 1,895.00 = 3,790.00. It came after full payment, so RE-2026-0318 shows -3,580.00; this is part of p2.
 Next step: deduct 3,580.00 from 9000010427 (mail 67 allows it) or ask for a refund; claim 210.00 in writing, no set-off without agreement (framework 8).
 
 **p3. Extra users not invoiced** (`collections`). EUR 475.00.
@@ -47,8 +47,8 @@ Next step: do not pay; dispute in writing before the due date, 5 November (frame
 
 ## Clean on purpose
 
-Apart from the cases above, all invoices are paid in full and on time. Four are open on "now", none overdue. Discount and set-off rows move no money, so each has its own `external_ref`.
+Apart from the cases above, all invoices are paid in full and on time. RE-2025-0402 has a clean credit note, GS-2025-0047, for a returned gateway (mails 3, 4). Four invoices are open on "now", none overdue. Discount and set-off rows each have their own `external_ref`; a shared one means one transfer.
 
 ## How I made it
 
-I chose the problems and decoys; Claude Code wrote the scripts, agreements and mails. A script checks every ID and amount, and I checked each case by hand. p2 comes from my own reselling business: a refund lower than agreed.
+I chose the problems and decoys; Claude Code wrote the scripts, agreements and mails and drafted this README and the key. A script checks every ID and amount, and I checked each case by hand. p2 comes from my own reselling business: a refund lower than agreed.
